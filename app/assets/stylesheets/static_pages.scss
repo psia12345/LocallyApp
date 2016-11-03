@@ -1,0 +1,96 @@
+// Place all the styles related to the Static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: #eff5f7;
+}
+.navbar {
+  background-color: white;
+  border-bottom: 1px solid #dddddd;
+  height: auto;
+  font-size: 20px;
+  display:flex;
+  width: 87vw;
+  .logo{
+    border-right: 1px solid #dddddd;
+    a{
+      text-decoration: none;
+      color: #5D7078;
+      padding: 10px;
+      display: block;
+    }
+  }
+  .right{
+    display:flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    .right-nav{
+      display: flex;
+      border-left: 1px solid #dddddd;
+      cursor: pointer;
+      a{
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+        color: #5D7078;
+      } #login, #logout{
+        border-left: 1px solid #dddddd;
+      }
+    }
+  }
+}
+
+input.login-input {
+    color: blue;
+    width: 90%;
+    display: block;
+    padding: 10px;
+    border: 1px solid #999;
+    height: 10px;
+    margin: 3px auto;
+    font-size: 15px;
+}
+input.button:hover {
+  background: #fff;
+  color: #09C;
+}
+.form-title{
+  font-size: 20px;
+  text-align: center
+}
+.login-form-container {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+input.button-guest {
+  width: auto;
+  position: absolute;
+  right: 0px;
+  bottom: -45px;
+  color: #fff;
+  background-color: gray;
+  font-family: Tahoma;
+  padding: 8px 20px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  display: block;
+  font-size: 15px;
+  margin: 5px 0px;
+}
+input.button-submit {
+  width: auto;
+  position: absolute;
+  left: 0px;
+  bottom: -45px;
+  color: #fff;
+  background-color: gray;
+  font-family: Tahoma;
+  border-radius: 10px;
+  padding: 8px 20px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  display: block;
+  font-size: 15px;
+  margin: 5px 0px;
+}
