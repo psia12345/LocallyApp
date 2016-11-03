@@ -1,9 +1,14 @@
 class User < ApplicationRecord
   validates :email, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  
+
   has_many :events,
     foreign_key: :host_id
+  has_many :event_interested_join_tables
+  has_many :interested_events, through: :event_interested_join_tables
+
+  has_many :event_attendee_join_tables
+  has_many :attending_events, through: :event_attendee_join_tables
 
   attr_reader :password
   after_initialize :set_session_token
