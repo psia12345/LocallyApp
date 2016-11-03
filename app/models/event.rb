@@ -7,10 +7,9 @@ class Event < ApplicationRecord
   has_many :interested_users,
     through: :event_interested_join_tables
 
-#attendee query is not working correctly... no innerjoin with Events
-    # has_many :attendees,
-    #   through: :event_attendee_join_tables
-    # has_many :event_interested_join_tables
+  has_many :attendees,
+    through: :event_attendee_join_tables
+  has_many :event_interested_join_tables
 
   #event host shouldn't be attendee and those who are interested also shouldn't be attendee
 
