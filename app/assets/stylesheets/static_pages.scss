@@ -10,7 +10,7 @@ body{
   height: auto;
   font-size: 20px;
   display:flex;
-  width: 87vw;
+  width: 100%;
   .logo{
     border-right: 1px solid #dddddd;
     a{
@@ -63,9 +63,13 @@ input.button:hover {
   width: auto;
   height: auto;
 }
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 input.button-guest {
-  width: auto;
-  position: absolute;
+  width: 80px;
   right: 0px;
   bottom: -45px;
   color: #fff;
@@ -74,13 +78,10 @@ input.button-guest {
   padding: 8px 20px;
   border: 1px solid darkgray;
   border-radius: 5px;
-  display: block;
   font-size: 15px;
-  margin: 5px 0px;
 }
 input.button-submit {
-  width: auto;
-  position: absolute;
+  width: 80px;
   left: 0px;
   bottom: -45px;
   color: #fff;
@@ -90,7 +91,5 @@ input.button-submit {
   padding: 8px 20px;
   border: 1px solid darkgray;
   border-radius: 5px;
-  display: block;
   font-size: 15px;
-  margin: 5px 0px;
 }
