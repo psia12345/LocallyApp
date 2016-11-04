@@ -8,7 +8,8 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import EventListContainer from './event/event_list_container';
-
+import EventFormContainer from './event/event_form_container';
+import EventShowContainer from './event/event_show_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -24,10 +25,14 @@ const Root = ({store}) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path="/events" component={EventListContainer} onEnter={fetchAllEvents}/>
-
+          <Route path="/login" component={SessionFormContainer}
+                 onEnter={_redirectIfLoggedIn}/>
+          <Route path="/signup" component={SessionFormContainer}
+                 onEnter={_redirectIfLoggedIn}/>
+          <Route path="/events" component={EventListContainer}
+                 onEnter={fetchAllEvents}/>
+               <Route path="/events/:id" component={EventShowContainer}/>
+          <Route path="/new_event" component={EventFormContainer} />
         </Route>
       </Router>
     </Provider>

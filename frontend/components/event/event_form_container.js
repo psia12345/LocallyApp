@@ -2,12 +2,13 @@ import EventForm from './event_form';
 import {connect} from 'react-redux';
 import {createEvent, updateEvent} from '../../actions/event_actions';
 
-const mapStateToProps = ({events}) => ({
-  newEvent: Boolean(events.event),
+const mapStateToProps = ({events, session}) => ({
+  event: events.event,
+  currentUser: session.currentUser,
   errors: events.errors
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, {location}) => ({
   createEvent: (event) => dispatch(createEvent(event)),
   updateEvent: (event) => dispatch(updateEvent(event))
 });

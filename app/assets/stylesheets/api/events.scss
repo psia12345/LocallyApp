@@ -3,35 +3,58 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .main-content{
   display:flex;
-  justify-content: center;
 }
 .event-list-section {
-  width: 550px;
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .description{
   display: block;
-  margin-left: 40px;
+  h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  p{
+
+
+  }
 }
 .event-listing{
-  list-style-type: none;
+  a{
+    text-decoration: none;
+
+  }
 }
 .single-event{
   display: flex;
+  background-color: white;
+  margin-bottom: 10px;
   img {
     width: 200px;
     height: 100px;
     display: block;
-    margin-bottom: 10px;
   }
 }
 .event-info{
-  background-color: white;
   height: 100px;
+  span{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  h2{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 }
 .sidebar{
+  width: 30%;
+  height: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
   img{
-    width: 120px;
-    height: 150px;
+    width: 100px;
+    height: 20px;
   }
 }
 .sidebar-content{

@@ -58,7 +58,8 @@ class Header extends React.Component {
               isOpen={this.state.modalOpen}
               onRequestClose={this.onModalClose}
               style={ModalStyle}>
-              <SessionFormContainer close={this.onModalClose} action={this.state.signIn} />
+              <SessionFormContainer close={this.onModalClose} action={this.state.signIn} loginlink={<Link id="login"
+                onClick={this.handleClick.bind(this, "Login") }>LOG IN</Link>}/>
             </Modal>
           </div>
         )
@@ -77,7 +78,7 @@ class Header extends React.Component {
           </div>
           {this.checkLoggedInUser()}
           <div className="right-nav">
-            <Link to="/events">CREATE EVENT</Link>
+            <Link to="/new_event">CREATE EVENT</Link>
           </div>
         </div>
       </nav>

@@ -14,6 +14,9 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
+      params[:event][:category].each do |cat|
+        CategoryEventJoinTable.create(cat, event.id)
+      end
       render :show
     else
       render json: @event.errors.full_messages, status: 422
@@ -41,6 +44,6 @@ class Api::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :description, :host_id, :start_date_time, :end_date_time, :image_url)
+    params.require(:event).permit(:title, :description, :host_id, :start_date_time, :end_date_time, :image_url, :category)
   end
 end

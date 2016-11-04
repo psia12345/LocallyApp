@@ -11,8 +11,10 @@ class User < ApplicationRecord
   has_many :interested_events, through: :event_interested_join_tables
 
 #attendee query is not working correctly... no innerjoin with Events
-  # has_many :event_attendee_join_tables
-  # has_many :attending_events, through: :event_attendee_join_tables
+  has_many :event_attendee_join_tables,
+    class_name: :EventAttendeeJoinTable,
+    foreign_key: :attendee_id
+  has_many :attending_events, through: :event_attendee_join_tables
 
   attr_reader :password
   after_initialize :set_session_token

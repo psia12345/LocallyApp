@@ -54,6 +54,7 @@ class SessionForm extends React.Component{
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <h2 className="form-title">{this.props.action}</h2>
           {this.renderErrors()}
+          {this.props.link}
           <div className="login-form">
             <input type="text" placeholder="email"
                    value={this.state.email}
