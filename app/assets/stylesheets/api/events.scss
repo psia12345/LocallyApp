@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .main-content{
   display:flex;
+  flex-wrap: wrap;
 }
 .event-list-section {
   width: 50%;

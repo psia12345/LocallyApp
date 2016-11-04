@@ -6,20 +6,20 @@ class EventForm extends React.Component{
     this.state = {
       title: "",
       description: "",
-      host_id: props.currentUser,
+      host_id: props.currentUser.id,
       start_date: "",
       start_time: "",
-      end_date_time: "2016-11-11 16:00"
+      end_date: "",
+      end_time: "",
+      image_url: "", 
+      categories: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e){
     e.preventDefault();
     const event = this.state
-    if (this.props.location.hash === '#/new_event' ){
-      createEvent(event)
-    } else{
-    }
+    this.props.createEvent(event);
   };
 
   update(field){
@@ -28,6 +28,12 @@ class EventForm extends React.Component{
     });
   }
 
+  addCategory(e){
+    e.preventDefault();
+    return e => this.setState({
+      categories: this.state.categories.concat([e])
+    })
+  }
 
   render(){
     return(
@@ -48,6 +54,18 @@ class EventForm extends React.Component{
         <input type="time"
                 value={this.state.start_time}
                 onChange={this.update("start_time")}/>
+        <label>End Date</label>
+        <input type="date"
+                value={this.state.end_date}
+                onChange={this.update("end_date")}/>
+        <label>End Time</label>
+        <input type="time"
+                value={this.state.end_time}
+                onChange={this.update("end_time")}/>
+              <button type="button" onClick={this.addCategory} value="sample1">Sample 1</button>
+              <button type="button" onClick={this.addCategory} value="sample2">Sample 2</button>
+              <button type="button" onClick={this.addCategory} value="sample3">Sample 3</button>
+              <button type="button" onClick={this.addCategory} value="sample4">Sample 4</button>
         <input type="submit" value="Submit"/>
       </form>
     )

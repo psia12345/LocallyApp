@@ -18,6 +18,12 @@ const Root = ({store}) => {
       replace('/');
     }
   };
+
+  // const _ensureLoginUser = () => {
+  //   if(typeof currentUser === 'undefine'){
+  //     replace('/login')
+  //   }
+  // }
   const fetchAllEvents = () => {
     store.dispatch(getEvents())};
 

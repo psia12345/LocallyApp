@@ -8,7 +8,7 @@ const mapStateToProps = ({events, session}) => ({
   errors: events.errors
 });
 
-const mapDispatchToProps = (dispatch, {location}) => ({
+const mapDispatchToProps = dispatch => ({
   createEvent: (event) => dispatch(createEvent(event)),
   updateEvent: (event) => dispatch(updateEvent(event))
 });

@@ -12,11 +12,11 @@ class Api::EventsController < ApplicationController
   end
 
   def create
+    debugger
     @event = Event.new(event_params)
+    @event.start_date_time = "#{params[:event][:start_date]} #{params[:event][:start_time]}".to_datetime
+    @event.end_date_time = "#{params[:event][:end_date]} #{params[:event][:end_time]}".to_datetime
     if @event.save
-      params[:event][:category].each do |cat|
-        CategoryEventJoinTable.create(cat, event.id)
-      end
       render :show
     else
       render json: @event.errors.full_messages, status: 422
@@ -25,6 +25,7 @@ class Api::EventsController < ApplicationController
 
   def update
     @event = Event.find_by_id(params[:id])
+    @event.start_date_time = params[:event][:start_date] + params[:event][:start_time]
     if @event.update(event_params)
       render :show
     else
@@ -44,6 +45,6 @@ class Api::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :description, :host_id, :start_date_time, :end_date_time, :image_url, :category)
+    params.require(:event).permit(:title, :description, :host_id, :image_url, :categories, :start_date, :start_time, :end_date, :end_time, :end_date_time)
   end
 end
