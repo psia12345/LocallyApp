@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import {signup, login, logout, show } from './util/session_api_util';
 import configStore from './store/store';
 import merge from 'lodash/merge';
+import {getEvents} from './actions/event_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   Modal.setAppElement(document.body);
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
   window.merge = merge;
+  window.getEvents = getEvents;
   // window.login = login;
   // window.logout = logout;
   // window.show = show;
