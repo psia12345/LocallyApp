@@ -4,7 +4,8 @@ export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const DELETE_EVENT = 'DELETE_EVENT';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'; 
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CREATE_EVENT = 'CREATE_EVENT'; 
 
 export const getEvents = () => ({
   type: GET_EVENTS
@@ -27,6 +28,11 @@ export const receiveEvents = (events) => ({
 
 export const updateEvent = (event) => ({
   type: UPDATE_EVENT,
+  event
+});
+
+export const createEvent = (event) => ({
+  type: CREATE_EVENT,
   event
 });
 

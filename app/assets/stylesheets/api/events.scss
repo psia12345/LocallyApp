@@ -1,3 +1,55 @@
 // Place all the styles related to the api/Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-content{
+  display:flex;
+  justify-content: center;
+}
+.event-list-section {
+  width: 550px;
+}
+.description{
+  display: block;
+  margin-left: 40px;
+}
+.event-listing{
+  list-style-type: none;
+}
+.single-event{
+  display: flex;
+  img {
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.event-info{
+  background-color: white;
+  height: 100px;
+}
+.sidebar{
+  img{
+    width: 120px;
+    height: 150px;
+  }
+}
+.sidebar-content{
+  li{
+    list-style: none;
+    margin: 0 0 0 -40px;
+    padding: 5px;
+    border-bottom: 1px solid #dddddd;
+    display: block;
+  }
+}
+ul.sub-category, .sub-event-type, .sub-date, .sub-price{
+  display: none;
+}
+.clearfix:after {
+   content: "";
+   visibility: hidden;
+   display: block;
+   height: 10px;
+   clear: both;
+}

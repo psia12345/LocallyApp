@@ -26,7 +26,8 @@ const Root = ({store}) => {
         <Route path="/" component={App}>
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path="/events" component={EventListContainer} onEnter={fetchAllEvents} />
+          <Route path="/events" component={EventListContainer} onEnter={fetchAllEvents}/>
+
         </Route>
       </Router>
     </Provider>

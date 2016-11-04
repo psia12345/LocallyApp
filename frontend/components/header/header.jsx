@@ -25,7 +25,6 @@ class Header extends React.Component {
     e.preventDefault();
     const user = { email: "test@gmail.com", password: "password" };
     this.props.login(user);
-    this.props.close();
   }
 
   handleLogout(e){
@@ -54,7 +53,7 @@ class Header extends React.Component {
               onClick={this.handleClick.bind(this, "Sign Up")}>SIGN UP</Link>
             <Link id="login"
               onClick={this.handleClick.bind(this, "Login") }>LOG IN</Link>
-
+            <Link id="guest" onClick={this.handleGuest.bind(this)}>GUEST </Link>
             <Modal
               isOpen={this.state.modalOpen}
               onRequestClose={this.onModalClose}
@@ -75,9 +74,6 @@ class Header extends React.Component {
         <div className="right">
           <div className="right-nav">
             <Link to="/events">BROWSE EVENTS</Link>
-          </div>
-          <div className="right-nav">
-            <Link onClick={this.handleGuest.bind(this)}>GUEST </Link>
           </div>
           {this.checkLoggedInUser()}
           <div className="right-nav">
