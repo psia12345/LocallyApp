@@ -11,7 +11,7 @@ class EventForm extends React.Component{
       start_time: "",
       end_date: "",
       end_time: "",
-      image_url: "", 
+      image_url: "",
       categories: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,8 +30,8 @@ class EventForm extends React.Component{
 
   addCategory(e){
     e.preventDefault();
-    return e => this.setState({
-      categories: this.state.categories.concat([e])
+    this.setState({    
+      categories: this.state.categories.concat([e.currentTarget.value])
     })
   }
 

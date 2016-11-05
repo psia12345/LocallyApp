@@ -1,6 +1,8 @@
 module.exports = {
   overlay : {
-    position        : 'fixed',
+    display         : 'flex',
+    alignItem       : 'center',
+    justifyContent  : 'center',
     top             : 0,
     left            : 0,
     right           : 0,
@@ -8,11 +10,7 @@ module.exports = {
     backgroundColor : 'rgba(255, 255, 255, 0.75)'
   },
   content : {
-    position                   : 'absolute',
-    top                        : '20%',
-    left                       : '40%',
-    right                      : '40%',
-    bottom                     : '30%',
+    width                      : '180px',
     border                     : '1px solid #ccc',
     background                 : '#fff',
     overflow                   : 'auto',

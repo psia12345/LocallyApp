@@ -13,6 +13,7 @@ class Header extends React.Component {
     };
     this.onModalClose = this.onModalClose.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.checkforUser = this.checkforUser.bind(this); 
   }
   handleClick(string){
     this.setState({
@@ -66,6 +67,16 @@ class Header extends React.Component {
     }
   }
 
+  checkforUser(){
+    if (this.props.currentUser){
+    } else{
+      this.setState({
+        modalOpen: true,
+        signIn: "Login"
+      })
+    }
+  }
+
   render(){
     return(
       <nav className="navbar">
@@ -78,7 +89,7 @@ class Header extends React.Component {
           </div>
           {this.checkLoggedInUser()}
           <div className="right-nav">
-            <Link to="/new_event">CREATE EVENT</Link>
+            <Link to="/new_event" onClick={this.checkforUser}>CREATE EVENT</Link>
           </div>
         </div>
       </nav>
