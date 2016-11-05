@@ -1,8 +1,6 @@
 module.exports = {
   overlay : {
     display         : 'flex',
-    alignItem       : 'center',
-    justifyContent  : 'center',
     top             : 0,
     left            : 0,
     right           : 0,
@@ -18,7 +16,10 @@ module.exports = {
     borderRadius               : '4px',
     outline                    : 'none',
     padding                    : '20px',
-    height                     : '150px'
+    height                     : '150px',
+    alignItem                  : 'center',
+    justifyContent             : 'center',
+    margin                     : 'auto'
   }
 
 }

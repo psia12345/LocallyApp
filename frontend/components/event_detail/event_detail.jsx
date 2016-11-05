@@ -5,8 +5,8 @@ class EventDetail extends React.Component {
     super(props)
   }
   componentDidMount(){
-    const id = this.props.params.id - 1
-    this.props.getEvent(id);
+    const eventId = this.props.params.id
+    this.props.getEvent(eventId);
   }
 
 

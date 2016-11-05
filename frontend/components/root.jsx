@@ -9,7 +9,7 @@ import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import EventListContainer from './event/event_list_container';
 import EventFormContainer from './event/event_form_container';
-import EventShowContainer from './event_show/event_show_container';
+import EventDetailContainer from './event_detail/event_detail_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -19,8 +19,7 @@ const Root = ({store}) => {
     }
   };
 
-  const _ensureLoginUser = (nextState, replace) => {
-    debugger;
+  const _ensureLoginUser = (nextState, ) => {
     if(store.getState().session.currentUser === null ){
       replace('/');
     }
@@ -38,7 +37,7 @@ const Root = ({store}) => {
                  onEnter={_redirectIfLoggedIn}/>
           <Route path="/events" component={EventListContainer}
                  onEnter={fetchAllEvents}/>
-               <Route path="/events/:id" component={EventShowContainer}/>
+               <Route path="/events/:id" component={EventDetailContainer}/>
           <Route path="/new_event" component={EventFormContainer} onEnter={_ensureLoginUser}/>
         </Route>
       </Router>

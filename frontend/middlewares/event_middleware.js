@@ -1,7 +1,8 @@
 import { index, show, create,
   update, removeEvent } from '../util/event_api_util';
 //some actions import here
-import { GET_EVENT, receiveErrors, receiveEvent,
+import { GET_EVENT, receiveErrors,
+         receiveEvent,
          receiveEvents, GET_EVENTS, UPDATE_EVENT,
          CREATE_EVENT
       } from '../actions/event_actions';
@@ -13,7 +14,7 @@ export default ({getState, dispatch}) => next => action => {
 
   switch(action.type){
     case GET_EVENT:
-      show(id, successEventCallback, errorCallback);
+      show(action.id, successEventCallback, errorCallback);
       return next(action);
     case GET_EVENTS:
       index(successEventsCallback, errorCallback);
@@ -23,7 +24,7 @@ export default ({getState, dispatch}) => next => action => {
       return next(action);
     case CREATE_EVENT:
       create(action.event, successEventCallback, errorCallback);
-      return next(action); 
+      return next(action);
     default:
       return next(action);
   }

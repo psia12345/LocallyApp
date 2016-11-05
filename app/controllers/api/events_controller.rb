@@ -12,7 +12,6 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    debugger
     @event = Event.new(event_params)
     @event.start_date_time = "#{params[:event][:start_date]} #{params[:event][:start_time]}".to_datetime
     @event.end_date_time = "#{params[:event][:end_date]} #{params[:event][:end_time]}".to_datetime

@@ -1,10 +1,5 @@
-import {RECEIVE_EVENTS, RECEIVE_EVENT,
-        RECEIVE_ERRORS, DELETE_EVENT} from '../actions/event_actions';
-import merge from 'lodash/merge';
-
-const defaultEventState = Object.freeze([
-  {event: null}
-])
+import { RECEIVE_EVENTS, RECEIVE_EVENT,
+         RECEIVE_ERRORS, DELETE_EVENT } from '../actions/event_actions';
 
 const EventReducer = (oldState = [], action) => {
   Object.freeze(oldState);
@@ -15,13 +10,5 @@ const EventReducer = (oldState = [], action) => {
     return oldState;
   };
 };
-
-
-
-
-
-
-
-
 
 export default EventReducer;
