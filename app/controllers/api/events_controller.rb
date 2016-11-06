@@ -32,11 +32,10 @@ class Api::EventsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @event = Event.find_by_id(params[:id])
     if @event.user == current_user
       @event.destroy
-      render :index
     else
       render json: @event.errors.full_messages, status: 422
     end
@@ -44,6 +43,6 @@ class Api::EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:title, :description, :host_id, :image_url, :categories, :start_date, :start_time, :end_date, :end_time, :end_date_time)
+    params.require(:event).permit(:title, :description, :host_id, :image_url, :categories, :start_date, :start_time, :end_date, :end_time)
   end
 end

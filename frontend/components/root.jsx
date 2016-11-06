@@ -19,7 +19,7 @@ const Root = ({store}) => {
     }
   };
 
-  const _ensureLoginUser = (nextState, ) => {
+  const _ensureLoginUser = (nextState, replace ) => {
     if(store.getState().session.currentUser === null ){
       replace('/');
     }
@@ -39,6 +39,7 @@ const Root = ({store}) => {
                  onEnter={fetchAllEvents}/>
                <Route path="/events/:id" component={EventDetailContainer}/>
           <Route path="/new_event" component={EventFormContainer} onEnter={_ensureLoginUser}/>
+          <Route path="/events/:id/update" component={EventFormContainer} />
         </Route>
       </Router>
     </Provider>

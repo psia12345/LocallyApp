@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class EventForm extends React.Component{
   constructor(props){
@@ -15,12 +16,19 @@ class EventForm extends React.Component{
       categories: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.navigateToCreatedEvent = this.navigateToCreatedEvent.bind(this);
+    this.navLink = this.navLink.bind(this);
   }
   handleSubmit(e){
     e.preventDefault();
     const event = this.state
     this.props.createEvent(event);
+    this.navigateToCreatedEvent();
   };
+
+  navigateToCreatedEvent() {
+    this.props.router.push("/events");
+  }
 
   update(field){
     return e => this.setState({
@@ -30,15 +38,32 @@ class EventForm extends React.Component{
 
   addCategory(e){
     e.preventDefault();
-    this.setState({    
+    this.setState({
       categories: this.state.categories.concat([e.currentTarget.value])
     })
   }
 
+  navLink() {
+    if(this.props.formType !== 'new_event'){
+      const event = this.props.event;
+      this.setState({
+        title: event.title,
+        description: event.description,
+        host_id: props.currentUser.id,
+        start_date: event.start_date,
+        start_time: event.start_time,
+        end_date: event.end_date,
+        end_time: event.end_time,
+        image_url: event.image_url,
+        categories: event.categories
+      })
+    }
+  }
+
   render(){
+    {this.navLink()}
     return(
-      <form onSubmit={this.handleSubmit} className="event-form">
-        <label>Title</label>
+      <form onSubmit={this.handleSubmit} className="event-form">        <label>Title</label>
         <input type="text"
                 value={this.state.title}
                 onChange={this.update("title")}/>
@@ -72,4 +97,4 @@ class EventForm extends React.Component{
   }
 }
 
-export default EventForm;
+export default withRouter(EventForm);

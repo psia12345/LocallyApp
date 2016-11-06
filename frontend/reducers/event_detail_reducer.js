@@ -1,4 +1,5 @@
-import { RECEIVE_EVENT } from '../actions/event_actions';
+import { RECEIVE_EVENT, DELETE_EVENT } from '../actions/event_actions';
+import merge from 'lodash/merge';
 
 const defaultEventDetailState = {
   title: "",
@@ -16,8 +17,16 @@ const EventDetailReducer = (oldstate = defaultEventDetailState, action) => {
   Object.freeze(oldstate);
   switch(action.type){
     case RECEIVE_EVENT:
-      const requestedEvent = action.event;
+      const requestedEvent = action.event
+      const newState = merge({}, oldstate, action.event)
+      const date = new Date(action.event.start_date_time).toString();
+      console.log("date", date);
+      newState.start_date = date.slice(0,15);
+      newState.start_time = date.slice(16,24);
+      console.log(newState);
       return requestedEvent;
+    case DELETE_EVENT:
+      return defaultEventDetailState;
     default:
       return oldstate;
   };

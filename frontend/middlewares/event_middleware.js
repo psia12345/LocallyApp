@@ -1,16 +1,17 @@
 import { index, show, create,
-  update, removeEvent } from '../util/event_api_util';
+  update, remove } from '../util/event_api_util';
 //some actions import here
 import { GET_EVENT, receiveErrors,
-         receiveEvent,
+         receiveEvent, removeEvent,
          receiveEvents, GET_EVENTS, UPDATE_EVENT,
-         CREATE_EVENT
+         CREATE_EVENT, DELETE_EVENT
       } from '../actions/event_actions';
 
 export default ({getState, dispatch}) => next => action => {
-  const successEventCallback = event => dispatch(receiveEvent(event));
+  const successEventCallback = event => {dispatch(receiveEvent(event))};
   const successEventsCallback = events => dispatch(receiveEvents(events));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
+  const successDeleteCallback = () => dispatch(removeEvent(event));
 
   switch(action.type){
     case GET_EVENT:
@@ -25,8 +26,12 @@ export default ({getState, dispatch}) => next => action => {
     case CREATE_EVENT:
       create(action.event, successEventCallback, errorCallback);
       return next(action);
+    case DELETE_EVENT:
+      remove(action.id, successDeleteCallback, errorCallback);
+      return next(action);
     default:
       return next(action);
+
   }
 };
 

@@ -36,10 +36,10 @@ export const update = (event, success, error) => {
   });
 };
 
-export const removeEvent = (id, succes, error) => {
+export const remove = (id, success, error) => {
   $.ajax({
     method: 'DELETE',
-    url: `api/events/${event.id}`,
+    url: `api/events/${id}`,
     success,
     error
   })

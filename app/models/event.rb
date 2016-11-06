@@ -5,6 +5,7 @@ class Event < ApplicationRecord
 
   has_many :category_event_join_tables
   has_many :categories, through: :category_event_join_tables
+
   has_many :event_attendee_join_tables
   has_many :interested_users,
     through: :event_interested_join_tables
@@ -20,4 +21,7 @@ class Event < ApplicationRecord
     primary_key: :id,
     foreign_key: :host_id
 
+  def start_time
+    start_date_time.to_s(:daymo)
+  end
 end
