@@ -13,7 +13,7 @@ class EventDetail extends React.Component {
 
   showUpdateDelete(){
     const eventId = this.props.params.id;
-    if (this.props.currentUser.id === this.props.event.host_id) {
+    if (this.props.currentUser !== null && this.props.currentUser.id === this.props.event.host_id) {
       return(
         <div>
           <Link to={`events/${eventId}/update`}>Update</Link>

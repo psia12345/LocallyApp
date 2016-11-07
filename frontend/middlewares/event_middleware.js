@@ -8,7 +8,7 @@ import { GET_EVENT, receiveErrors,
       } from '../actions/event_actions';
 
 export default ({getState, dispatch}) => next => action => {
-  const successEventCallback = event => {dispatch(receiveEvent(event))};
+  const successEventCallback = event => dispatch(receiveEvent(event));
   const successEventsCallback = events => dispatch(receiveEvents(events));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
   const successDeleteCallback = () => dispatch(removeEvent(event));
@@ -21,7 +21,7 @@ export default ({getState, dispatch}) => next => action => {
       index(successEventsCallback, errorCallback);
       return next(action);
     case UPDATE_EVENT:
-      update(successEventCallback, errorCallback);
+      update(action.event, successEventCallback, errorCallback);
       return next(action);
     case CREATE_EVENT:
       create(action.event, successEventCallback, errorCallback);
