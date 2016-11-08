@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-
+import dateFormat from 'dateFormat';
 class EventDetail extends React.Component {
   constructor(props){
     super(props)
@@ -35,6 +35,10 @@ class EventDetail extends React.Component {
 
   render(){
     const event = this.props.event
+    const start_date = dateFormat(event.start_date_time, "dddd, mmmm dS, yyyy");
+    const start_time = dateFormat(event.start_date_time, "h:MM:ss TT");
+    const end_date = dateFormat(event.end_date_time, "dddd, mmmm dS, yyyy");
+    const end_time = dateFormat(event.end_date_time, "h:MM:ss TT");
     debugger;
     return(
       <section>
