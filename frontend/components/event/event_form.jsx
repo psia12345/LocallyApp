@@ -14,10 +14,7 @@ class EventForm extends React.Component{
       end_date: "",
       end_time: "",
       image_url: "",
-      start_date_time: "",
-      end_date_time: "",
-      categories: [],
-      submitted: false
+      categories: []
     };
     this.emptyState = this.state;
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -141,11 +138,25 @@ class EventForm extends React.Component{
           <div className="time">
             <div className="start-time">
               <label>STARTS</label>
-              <Datetime value={this.state.start_date_time} onChange={(newDate) => this.handleDateChange(newDate._d)} />
+                <Datetime value={this.state.start_date} timeFormat={false} onChange={(newDate) => (this.setState({
+                    start_date: newDate._d
+                  })
+                )}/>
+                <Datetime value={this.state.start_time} dateFormat={false} onChange={(newDate) => (this.setState({
+                    start_time: newDate._d
+                  })
+                )}/>
             </div>
             <div className="end-time">
               <label>ENDS</label>
-              <Datetime value={this.state.end_date_time} onChange={(newDate) => this.handleEndDateChange(newDate._d)} />
+                <Datetime value={this.state.end_date} timeFormat={false} onChange={(newDate) => (this.setState({
+                    end_date: newDate._d
+                  })
+                )}/>
+              <Datetime value={this.state.end_time} dateFormat={false} onChange={(newDate) => (this.setState({
+                  end_time: newDate._d
+                })
+              )}/>
             </div>
           </div>
           <label>EVENT DESCRIPTION</label>

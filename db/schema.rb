@@ -49,15 +49,21 @@ ActiveRecord::Schema.define(version: 20161103175201) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",           null: false
-    t.text     "description",     null: false
-    t.integer  "host_id",         null: false
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.integer  "host_id",     null: false
     t.string   "image_url"
-    t.datetime "start_date_time", null: false
-    t.datetime "end_date_time",   null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.date     "start_date",  null: false
+    t.datetime "start_time",  null: false
+    t.date     "end_date",    null: false
+    t.datetime "end_time",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["end_date"], name: "index_events_on_end_date", using: :btree
+    t.index ["end_time"], name: "index_events_on_end_time", using: :btree
     t.index ["host_id"], name: "index_events_on_host_id", using: :btree
+    t.index ["start_date"], name: "index_events_on_start_date", using: :btree
+    t.index ["start_time"], name: "index_events_on_start_time", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

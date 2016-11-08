@@ -6,8 +6,14 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.integer :host_id, null: false
       t.index :host_id
       t.string :image_url
-      t.datetime :start_date_time, null: false
-      t.datetime :end_date_time, null: false
+      t.date :start_date, null: false
+      t.datetime :start_time, null: false
+      t.date :end_date, null: false
+      t.datetime :end_time, null: false
+      t.index :start_date
+      t.index :start_time
+      t.index :end_date
+      t.index :end_time
       t.timestamps
     end
   end

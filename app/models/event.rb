@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
-  attr_accessor :start_date, :start_time, :end_date, :end_time, :categories
+  attr_accessor  :categories
 
-  validates :title, :description, :host_id, :start_date_time, :end_date_time, presence: true
+  validates :title, :description, :host_id, :start_date, :start_time, :end_date, :end_time, presence: true
 
   has_many :category_event_join_tables, dependent: :destroy
   has_many :categories,

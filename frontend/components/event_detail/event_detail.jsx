@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import dateFormat from 'dateFormat';
+
 class EventDetail extends React.Component {
   constructor(props){
     super(props)
@@ -16,7 +17,7 @@ class EventDetail extends React.Component {
     if (this.props.currentUser !== null && this.props.currentUser.id === this.props.event.host_id) {
       return(
         <div>
-          <Link to={`events/${eventId}/update`}>Update</Link>
+          <button><Link to={`events/${eventId}/update`}>Update</Link></button>
           <button
             onClick={this.triggerDelete.bind(this, eventId)}>Delete Event</button>
         </div>
@@ -35,35 +36,35 @@ class EventDetail extends React.Component {
 
   render(){
     const event = this.props.event
-    const start_date = dateFormat(event.start_date_time, "dddd, mmmm dS, yyyy");
-    const start_time = dateFormat(event.start_date_time, "h:MM:ss TT");
-    const end_date = dateFormat(event.end_date_time, "dddd, mmmm dS, yyyy");
-    const end_time = dateFormat(event.end_date_time, "h:MM:ss TT");
-    debugger;
+    console.log(event);
     return(
-      <section>
+      <section className="event-details">
         <div className="event-header">
-          <img src={event.image_url} />
-          <p>{event.start_date_time.slice(10)}</p>
-          <p>{console.log(event.start_date_time)}</p>
-          <h2>{event.title}</h2>
-          <p>by {event.email}</p>
+            <img src={event.image_url} />
+          <div className="right-element">
+            <p className="date">{event.start_date}</p>
+            <h2>{event.title}</h2>
+            <p>by {event.email}</p>
+          </div>
         </div>
         <div className="buttons">
           <button>Interested</button>
           <button>Attending</button>
         </div>
         <div className="main-content">
-          <p>DESCRIPTION</p>
-          <p>{event.description}</p>
-          <p>CATEGORIES</p>
+          <div className="event-main">
+            <p className="section-header">DESCRIPTION</p>
+            <p>{event.description}</p>
+            <p className="section-header">CATEGORIES</p>
+          </div>
+          <div className="side-content">
+            <p className="section-header">DATE AND TIME</p>
+            <p>FROM: <br/>{event.start_date} <br/>{event.start_time} </p>
+            <br />
+            <p>TO: <br/>{event.end_date} <br/>{event.end_time}</p>
+          </div>
+          {this.showUpdateDelete()}
         </div>
-        <div className="side-content">
-          <p>DATE AND TIME</p>
-          <p>FROM: {event.start_date_time}</p>
-          <p>TO: {event.end_date_time}</p>
-        </div>
-        {this.showUpdateDelete()}
       </section>
     )
   }

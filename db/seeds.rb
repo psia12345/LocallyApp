@@ -16,35 +16,45 @@ Event.create({title: "Weekend Book Sale",
   description: "Finding home for these gently used classic novels.",
   host_id: 1,
   image_url: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTu163ah8pnU3-WYhHVgSnAceds3eC0GRY9A1fpHnntJ0LQXTRSdw',
-  start_date_time: "2016-11-11 08:00",
-  end_date_time: "2016-11-20 16:00"
+  start_date: "2016-11-11",
+  start_time: "2016-11-11 12:00:00 AM",
+  end_date: "Sunday, November 20th, 2016",
+  end_time: "Sunday, November 20th, 2016 8:00:00 AM"
 })
 Event.create({title: "Spring Cleaning",
   description: "Check these stuff out!",
   host_id: 2,
   image_url: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTu163ah8pnU3-WYhHVgSnAceds3eC0GRY9A1fpHnntJ0LQXTRSdw',
-  start_date_time: "2016-11-11 08:00",
-  end_date_time: "2016-11-20 16:00"
+  start_time: "2016-11-11 08:00",
+  start_date: "2016-11-11",
+  end_date: "2016-11-20",
+  end_time: "2016-11-20 16:00"
 })
 Event.create({title: "Another garage sale",
   description: "Many items for sale!",
   host_id: 3,
   image_url: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTu163ah8pnU3-WYhHVgSnAceds3eC0GRY9A1fpHnntJ0LQXTRSdw',
-  start_date_time: "2016-11-4 08:00",
-  end_date_time: "2016-11-6 16:00"
+  start_time: "2016-11-11 08:00",
+  start_date: "2016-11-11",
+  end_date: "2016-11-20",
+  end_time: "2016-11-20 16:00"
 })
 Event.create({title: "Election Sale",
   description: "To celebrate the Election.",
   host_id: 1,
-  start_date_time: "2016-11-7 08:00",
-  end_date_time: "2016-11-7 16:00"
+  start_time: "2016-11-11 08:00",
+  start_date: "2016-11-11",
+  end_date: "2016-11-20",
+  end_time: "2016-11-20 16:00"
 })
 Event.create({title: "Electronic Gadgets",
   description: "Awesome gadgets",
   host_id: 2,
   image_url: '',
-  start_date_time: "2016-11-11 08:00",
-  end_date_time: "2016-11-20 16:00"
+  start_time: "2016-11-11 08:00",
+  start_date: "2016-11-11",
+  end_date: "2016-11-20",
+  end_time: "2016-11-20 16:00"
 })
 
 #Category
