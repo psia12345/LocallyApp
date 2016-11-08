@@ -16,7 +16,7 @@ class EventDetail extends React.Component {
     const eventId = this.props.params.id;
     if (this.props.currentUser !== null && this.props.currentUser.id === this.props.event.host_id) {
       return(
-        <div>
+        <div className="event-control">
           <button><Link to={`events/${eventId}/update`}>Update</Link></button>
           <button
             onClick={this.triggerDelete.bind(this, eventId)}>Delete Event</button>
@@ -62,8 +62,8 @@ class EventDetail extends React.Component {
             <p>FROM: <br/>{event.start_date} <br/>{event.start_time} </p>
             <br />
             <p>TO: <br/>{event.end_date} <br/>{event.end_time}</p>
+            {this.showUpdateDelete()}
           </div>
-          {this.showUpdateDelete()}
         </div>
       </section>
     )
