@@ -20,12 +20,13 @@ class EventForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToCreatedEvent = this.navigateToCreatedEvent.bind(this);
     this.navLink = this.navLink.bind(this);
-    this.handleDateChange = this.handleDateChange.bind(this);
-    this.handleEndDateChange = this.handleEndDateChange.bind(this);
+    // this.handleDateChange = this.handleDateChange.bind(this);
+    // this.handleEndDateChange = this.handleEndDateChange.bind(this);
   }
   handleSubmit(e){
     e.preventDefault();
     const event = this.state;
+    debugger;
     if(this.props.formType === 'new_event'){
       this.props.createEvent(event);
     } else {
@@ -51,17 +52,17 @@ class EventForm extends React.Component{
     })
   }
 
-  handleDateChange(newDate){
-    this.setState({
-      start_date_time: newDate
-    });
-  }
-
-  handleEndDateChange(newDate){
-    this.setState({
-      end_date_time: newDate
-    })
-  }
+  // handleDateChange(newDate){
+  //   this.setState({
+  //     start_date_time: newDate
+  //   });
+  // }
+  //
+  // handleEndDateChange(newDate){
+  //   this.setState({
+  //     end_date_time: newDate
+  //   })
+  // }
 
   componentDidMount(){
     if (typeof this.props.id !== 'undefined' && this.props.formType !== 'new_event'){
@@ -138,25 +139,31 @@ class EventForm extends React.Component{
           <div className="time">
             <div className="start-time">
               <label>STARTS</label>
-                <Datetime value={this.state.start_date} timeFormat={false} onChange={(newDate) => (this.setState({
-                    start_date: newDate._d
-                  })
-                )}/>
-                <Datetime value={this.state.start_time} dateFormat={false} onChange={(newDate) => (this.setState({
-                    start_time: newDate._d
-                  })
-                )}/>
+                <div className="start-date-timepicker">
+                  <Datetime value={this.state.start_date} timeFormat={false} onChange={(newDate) => (this.setState({
+                      start_date: newDate._d
+                    })
+                  )}/>
+                  <Datetime value={this.state.start_time} dateFormat={false} onChange={(newDate) => (this.setState({
+                      start_time: newDate._d
+                    })
+                  )}/>
+                </div>
             </div>
             <div className="end-time">
               <label>ENDS</label>
-                <Datetime value={this.state.end_date} timeFormat={false} onChange={(newDate) => (this.setState({
-                    end_date: newDate._d
+                <div className="start-date-timepicker">
+                  <Datetime value={this.state.end_date} timeFormat={false} onChange={(newDate) => (this.setState({
+                      end_date: newDate._d
+                    })
+                  )}/>
+                <Datetime value={this.state.end_time} dateFormat={false}
+                  inputProps={{readOnly:true}}
+                  onChange={(newDate) => (this.setState({
+                    end_time: newDate._d
                   })
                 )}/>
-              <Datetime value={this.state.end_time} dateFormat={false} onChange={(newDate) => (this.setState({
-                  end_time: newDate._d
-                })
-              )}/>
+              </div>
             </div>
           </div>
           <label>EVENT DESCRIPTION</label>

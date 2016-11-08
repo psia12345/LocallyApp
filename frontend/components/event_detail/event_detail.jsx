@@ -53,7 +53,7 @@ class EventDetail extends React.Component {
         <div className="main-content">
           <div className="event-main">
             <p className="section-header">DESCRIPTION</p>
-            <p>{event.description}</p>
+            <Text>{event.description}</Text>
             <p className="section-header">CATEGORIES</p>
           </div>
           <div className="side-content">
