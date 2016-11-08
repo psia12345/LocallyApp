@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import {getEvents } from '../actions/event_actions';
+import {getEvents, getEvent } from '../actions/event_actions';
 // react router
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
@@ -27,7 +27,18 @@ const Root = ({store}) => {
     }
   }
   const fetchAllEvents = () => {
-    store.dispatch(getEvents())};
+    store.dispatch(getEvents());
+  };
+
+  const fetchEvent = (nextState) =>{
+    store.dispatch(getEvent(nextState.params.id));
+  }
+
+  // const checkUserId = (nextState, ) => {
+  //   if(store.getState().eventShow.host_id === currentUser.id){
+  //     replace(`/events/${eventShow.id}`);
+  //   }
+  // }
 
   // const filloutEventInfo = () => {
   //   const event = store.getState().eventShow;
@@ -48,9 +59,9 @@ const Root = ({store}) => {
                  onEnter={_redirectIfLoggedIn}/>
           <Route path="/events" component={EventListContainer}
                  onEnter={fetchAllEvents}/>
-               <Route path="/events/:id" component={EventDetailContainer}/>
+          <Route path="/events/:id" component={EventDetailContainer}/>
           <Route path="/new_event" component={EventFormContainer} onEnter={_ensureLoginUser}/>
-          <Route path="/events/:id/update" component={EventFormContainer} />
+          <Route path="/events/:id/update" component={EventFormContainer} onEnter={fetchEvent}/>
           <Route path="/users/:id" component={UserContainer} />
         </Route>
       </Router>

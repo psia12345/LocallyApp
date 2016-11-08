@@ -1,11 +1,12 @@
 import EventForm from './event_form';
 import {connect} from 'react-redux';
-import {createEvent, updateEvent} from '../../actions/event_actions';
+import {createEvent, updateEvent, getEvent} from '../../actions/event_actions';
 
-const mapStateToProps = ({events, session, eventShow}) => ({
-  event: eventShow,
+const mapStateToProps = ({events, session, eventShow}, ownProps) => ({
+  eventShow: eventShow,
   currentUser: session.currentUser,
-  errors: events.errors
+  errors: events.errors,
+  id: ownProps.params.id
 });
 
 const mapDispatchToProps = (dispatch, {location}) => {
@@ -13,6 +14,7 @@ const mapDispatchToProps = (dispatch, {location}) => {
   return ({
     createEvent: (event) => dispatch(createEvent(event)),
     updateEvent: (event) => dispatch(updateEvent(event)),
+    getEvent: (id) => dispatch(getEvent(id)),
     formType
   });
 };

@@ -15,8 +15,11 @@ class EventForm extends React.Component{
       end_time: "",
       image_url: "",
       start_date_time: "",
-      categories: []
+      end_date_time: "", 
+      categories: [],
+      submitted: false
     };
+    this.emptyState = this.state;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToCreatedEvent = this.navigateToCreatedEvent.bind(this);
     this.navLink = this.navLink.bind(this);
@@ -35,7 +38,7 @@ class EventForm extends React.Component{
   };
 
   navigateToCreatedEvent() {
-    this.props.router.push("/events");
+    this.props.router.push(`/events/${this.props.eventShow.id}`);
   }
 
   update(field){
@@ -63,20 +66,35 @@ class EventForm extends React.Component{
     })
   }
 
-  componentWillMount(){
+  componentDidMount(){
+    if (typeof this.props.id !== 'undefined' && this.props.formType !== 'new_event'){
+      this.props.getEvent(this.props.id);
+    } else {
+      this.clearForm();
+    }
+  }
+
+  clearForm(){
+    if(this.props.formType === 'new_event'){
+      this.setState(this.emptyState);
+    }
+  }
+
+  componentWillReceiveProps(){
     this.navLink();
+    if (this.props.formType === 'new_event'){
+      this.clearForm();
+    }
   }
 
   navLink() {
-    if(this.props.formType !== 'new_event'){
-      const event = this.props.event;
+    if(this.props.eventShow && this.props.formType !== 'new_event'){
+      const event = this.props.eventShow;
       this.setState({
         id: event.id,
         title: event.title,
         description: event.description,
         host_id: this.props.currentUser.id,
-        // start_date: event.start_date,
-        // start_time: event.start_time,
         start_date_time: event.start_date_time,
         end_date_time: event.end_date_time,
         image_url: event.image_url,
@@ -110,7 +128,7 @@ class EventForm extends React.Component{
   // }
 
   render(){
-    this.navLink
+
     return(
       <form onSubmit={this.handleSubmit} className="event-form">
     <label>Title</label>

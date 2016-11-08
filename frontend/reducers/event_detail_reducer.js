@@ -2,6 +2,7 @@ import { RECEIVE_EVENT, DELETE_EVENT } from '../actions/event_actions';
 import merge from 'lodash/merge';
 
 const defaultEventDetailState = {
+  id: "",
   title: "",
   image_url: "",
   description: "",
@@ -11,7 +12,7 @@ const defaultEventDetailState = {
   end_date: "",
   end_time: "",
   start_date_time: "",
-  end_date_time: "", 
+  end_date_time: "",
   categories: []
 }
 

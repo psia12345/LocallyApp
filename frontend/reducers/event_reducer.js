@@ -8,7 +8,7 @@ const EventReducer = (oldState = [], action) => {
     case RECEIVE_EVENTS:
       return action.events;
     case REMOVE_EVENT:
-      return oldState; 
+      return oldState;
     default:
     return oldState;
   };

@@ -7,11 +7,17 @@ import { GET_EVENT, receiveErrors,
          CREATE_EVENT, DELETE_EVENT
       } from '../actions/event_actions';
 
+import {hashHistory} from 'react-router';
+
 export default ({getState, dispatch}) => next => action => {
   const successEventCallback = event => dispatch(receiveEvent(event));
   const successEventsCallback = events => dispatch(receiveEvents(events));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
   const successDeleteCallback = () => dispatch(removeEvent(event));
+  const successCreatedEventCallback = event => {
+    dispatch(receiveEvent);
+    hashHistory.push(`/events/${event.id}`)
+  }
 
   switch(action.type){
     case GET_EVENT:
@@ -27,7 +33,7 @@ export default ({getState, dispatch}) => next => action => {
       create(action.event, successEventCallback, errorCallback);
       return next(action);
     case DELETE_EVENT:
-      remove(action.id, successDeleteCallback, errorCallback);
+      remove(action.id, successEventsCallback, errorCallback);
       return next(action);
     default:
       return next(action);

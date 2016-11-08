@@ -45,10 +45,11 @@ class Header extends React.Component {
   }
 
   checkLoggedInUser(){
-    if (this.props.currentUser !== null){
+    const currentUser = this.props.currentUser;
+    if (currentUser !== null){
       return(
         <div className="right-nav">
-          <Link id="user" to={`/users/${currentUser.id}`}>{this.props.currentUser.email}</Link>
+          <Link id="user" to={`/users/${currentUser.id}`}>{currentUser.email}</Link>
           <Link id="logout"
             onClick={this.handleLogout}>Logout</Link>
         </div>
