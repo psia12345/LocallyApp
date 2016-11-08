@@ -53,14 +53,14 @@ class EventDetail extends React.Component {
         <div className="main-content">
           <div className="event-main">
             <p className="section-header">DESCRIPTION</p>
-            <Text>{event.description}</Text>
+            <pre>{event.description}</pre>
             <p className="section-header">CATEGORIES</p>
           </div>
           <div className="side-content">
             <p className="section-header">DATE AND TIME</p>
-            <p>FROM: <br/>{event.start_date} <br/>{event.start_time} </p>
+            <p>{event.start_date} {event.start_time} - </p>
             <br />
-            <p>TO: <br/>{event.end_date} <br/>{event.end_time}</p>
+            <p>{event.end_date} {event.end_time}</p>
             {this.showUpdateDelete()}
           </div>
         </div>

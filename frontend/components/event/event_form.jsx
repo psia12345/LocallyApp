@@ -11,6 +11,8 @@ class EventForm extends React.Component{
       host_id: this.props.currentUser.id,
       start_date: "",
       start_time: "",
+      start_date_time: "",
+      end_date_time: "",
       end_date: "",
       end_time: "",
       image_url: "",
@@ -26,6 +28,10 @@ class EventForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const event = this.state;
+    this.setState({
+      start_date_time: new Date(this.state.start_date + " " + this.state.start_time),
+      end_date_time: new Date(this.state.end_date + " " + this.state.end_time)
+    })
     debugger;
     if(this.props.formType === 'new_event'){
       this.props.createEvent(event);
@@ -96,7 +102,12 @@ class EventForm extends React.Component{
         start_date_time: event.start_date_time,
         end_date_time: event.end_date_time,
         image_url: event.image_url,
-        categories: event.categories
+        categories: event.categories,
+        end_time: event.end_time,
+        start_time: event.start_time,
+        end_date: event.end_date,
+        start_date: event.start_date
+
       })
     }
   }
@@ -140,11 +151,15 @@ class EventForm extends React.Component{
             <div className="start-time">
               <label>STARTS</label>
                 <div className="start-date-timepicker">
-                  <Datetime value={this.state.start_date} timeFormat={false} onChange={(newDate) => (this.setState({
+                  <Datetime value={this.state.start_date} timeFormat={false}
+                    inputProps={{readOnly:true, placeholder: "Start Date"}}
+                    onChange={(newDate) => (this.setState({
                       start_date: newDate._d
                     })
                   )}/>
-                  <Datetime value={this.state.start_time} dateFormat={false} onChange={(newDate) => (this.setState({
+                <Datetime value={this.state.start_time} dateFormat={false}
+                  inputProps={{readOnly:true, placeholder: "Start Time"}}
+                  onChange={(newDate) => (this.setState({
                       start_time: newDate._d
                     })
                   )}/>
@@ -153,12 +168,14 @@ class EventForm extends React.Component{
             <div className="end-time">
               <label>ENDS</label>
                 <div className="start-date-timepicker">
-                  <Datetime value={this.state.end_date} timeFormat={false} onChange={(newDate) => (this.setState({
+                  <Datetime value={this.state.end_date} timeFormat={false}
+                    inputProps={{readOnly:true, placeholder: "End Date"}}
+                    onChange={(newDate) => (this.setState({
                       end_date: newDate._d
                     })
                   )}/>
-                <Datetime value={this.state.end_time} dateFormat={false}
-                  inputProps={{readOnly:true}}
+                <Datetime value={this.state.end_time}
+                  inputProps={{readOnly:true, placeholder: "End Time"}}
                   onChange={(newDate) => (this.setState({
                     end_time: newDate._d
                   })

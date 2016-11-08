@@ -27,6 +27,7 @@ export const create = (event, success, error) => {
 };
 
 export const update = (event, success, error) => {
+  debugger;
   $.ajax({
     method: 'PATCH',
     url: `api/events/${event.id}`,
