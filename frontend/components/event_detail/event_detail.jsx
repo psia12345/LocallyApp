@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import dateFormat from 'dateFormat';
 
 class EventDetail extends React.Component {
   constructor(props){
