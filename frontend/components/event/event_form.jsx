@@ -27,11 +27,14 @@ class EventForm extends React.Component{
   }
   handleSubmit(e){
     e.preventDefault();
-    const event = this.state;
+    const tempStartDate = this.state.start_date.toLocaleString().replace('/[0-9][0-9]:.*/', '');
+    const tempEndDate = this.state.end_date.toLocaleString().replace('/[0-9][0-9]:.*/', '');
+    const tempStartTime = this.state.start_time.toLocaleString().replace('//')
     this.setState({
       start_date_time: new Date(this.state.start_date + " " + this.state.start_time),
       end_date_time: new Date(this.state.end_date + " " + this.state.end_time)
     })
+    const event = this.state;
     debugger;
     if(this.props.formType === 'new_event'){
       this.props.createEvent(event);
@@ -153,12 +156,15 @@ class EventForm extends React.Component{
                 <div className="start-date-timepicker">
                   <Datetime value={this.state.start_date} timeFormat={false}
                     inputProps={{readOnly:true, placeholder: "Start Date"}}
-                    onChange={(newDate) => (this.setState({
+                    closeOnSelect={true}
+                    onChange={(newDate) => {debugger;
+                      return(this.setState({
                       start_date: newDate._d
                     })
-                  )}/>
+                  )}}/>
                 <Datetime value={this.state.start_time} dateFormat={false}
                   inputProps={{readOnly:true, placeholder: "Start Time"}}
+                  closeOnSelect={true}
                   onChange={(newDate) => (this.setState({
                       start_time: newDate._d
                     })
@@ -170,12 +176,14 @@ class EventForm extends React.Component{
                 <div className="start-date-timepicker">
                   <Datetime value={this.state.end_date} timeFormat={false}
                     inputProps={{readOnly:true, placeholder: "End Date"}}
+                    closeOnSelect={true}
                     onChange={(newDate) => (this.setState({
                       end_date: newDate._d
                     })
                   )}/>
-                <Datetime value={this.state.end_time}
+                <Datetime value={this.state.end_time} dateFormat={false}
                   inputProps={{readOnly:true, placeholder: "End Time"}}
+                  closeOnSelect={true}
                   onChange={(newDate) => (this.setState({
                     end_time: newDate._d
                   })
