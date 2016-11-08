@@ -4,10 +4,13 @@
 .main-content{
   display:flex;
   flex-wrap: wrap;
+  width: 80%;
+  margin: 10px auto;
 }
 .event-list-section {
-  width: 50%;
-  margin-left: 20px;
+  width: 70%;
+  min-width: 500px;
+  margin-left: 30px;
   margin-right: 20px;
 }
 .description{
@@ -49,7 +52,7 @@
   }
 }
 .sidebar{
-  width: 30%;
+  width: 130px;
   height: 100%;
   margin-left: 20px;
   margin-right: 20px;

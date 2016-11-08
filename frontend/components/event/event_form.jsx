@@ -15,7 +15,7 @@ class EventForm extends React.Component{
       end_time: "",
       image_url: "",
       start_date_time: "",
-      end_date_time: "", 
+      end_date_time: "",
       categories: [],
       submitted: false
     };
@@ -128,29 +128,44 @@ class EventForm extends React.Component{
   // }
 
   render(){
-
     return(
-      <form onSubmit={this.handleSubmit} className="event-form">
-    <label>Title</label>
-        <input type="text"
-                value={this.state.title}
-                onChange={this.update("title")}/>
-        <label>Description</label>
-        <input type="text"
-                value={this.state.description}
-                onChange={this.update("description")}/>
-        <label>Start Time</label>
-        <Datetime value={this.state.start_date_time} onChange={(newDate) => this.handleDateChange(newDate._d)} />
-        <label>End Time</label>
-        <Datetime value={this.state.end_date_time} onChange={(newDate) => this.handleEndDateChange(newDate._d)} />
-        <div className="category-buttons">
-          <button type="button" onClick={this.addCategory} value="sample1">Sample 1</button>
-          <button type="button" onClick={this.addCategory} value="sample2">Sample 2</button>
-          <button type="button" onClick={this.addCategory} value="sample3">Sample 3</button>
-          <button type="button" onClick={this.addCategory} value="sample4">Sample 4</button>
-        </div>
-        <input type="submit" value="Submit"/>
-      </form>
+      <div className="making-event">
+        <h1>Create An Event</h1>
+        <form onSubmit={this.handleSubmit} className="event-form">
+          <h2>1. Event Details</h2>
+          <label>EVENT TITLE</label>
+          <input type="text" placeholder="Give it a short distict name"
+            value={this.state.title}
+            onChange={this.update("title")}
+            className="input-title"/>
+          <div className="time">
+            <div className="start-time">
+              <label>STARTS</label>
+              <Datetime value={this.state.start_date_time} onChange={(newDate) => this.handleDateChange(newDate._d)} />
+            </div>
+            <div className="end-time">
+              <label>ENDS</label>
+              <Datetime value={this.state.end_date_time} onChange={(newDate) => this.handleEndDateChange(newDate._d)} />
+            </div>
+          </div>
+          <label>EVENT DESCRIPTION</label>
+          <textarea value={this.state.description}
+          onChange={this.update("description")}
+          className="input-description">
+          </textarea>
+          <h2>2. Additional Settings</h2>
+          <div className="category-buttons">
+            <button type="button" onClick={this.addCategory} value="sample1">Sample 1</button>
+            <button type="button" onClick={this.addCategory} value="sample2">Sample 2</button>
+            <button type="button" onClick={this.addCategory} value="sample3">Sample 3</button>
+            <button type="button" onClick={this.addCategory} value="sample4">Sample 4</button>
+          </div>
+          <div className="last-part">
+            <h3>Nice job! You're almost done.</h3>
+            <input type="submit" value="MAKE YOUR EVENT LIVE" className="submit-button"/>
+          </div>
+        </form>
+      </div>
     )
   }
 }
