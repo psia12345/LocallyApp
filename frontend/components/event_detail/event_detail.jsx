@@ -5,6 +5,7 @@ class EventDetail extends React.Component {
   constructor(props){
     super(props)
     this.navigateToEventListing = this.navigateToEventListing.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount(){
     const eventId = this.props.params.id
@@ -33,6 +34,11 @@ class EventDetail extends React.Component {
     this.props.router.push("/events");
   }
 
+  handleClick(e){
+    e.preventDefault();
+
+  }
+
   render(){
     const event = this.props.event
     console.log(event);
@@ -47,8 +53,8 @@ class EventDetail extends React.Component {
           </div>
         </div>
         <div className="buttons">
-          <button>Interested</button>
-          <button>Attending</button>
+          <button onClick={this.handleClick} value="Interested">Interested</button>
+          <button onClick={this.handleClick} value="Attending">Attending</button>
         </div>
         <div className="main-content">
           <div className="event-main">

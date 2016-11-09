@@ -3,8 +3,9 @@ class CategoryEventJoinTable < ApplicationRecord
   validates :category_id, uniqueness: {scope: :event_id,
     message: "already has this event."}
 
-  belongs_to :category,
+  belongs_to :tag_category,
     class_name: :Category,
     foreign_key: :category_id
   belongs_to :event
+
 end

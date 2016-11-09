@@ -45,3 +45,5 @@ export const remove = (id, success, error) => {
     error
   })
 }
+
+export const attending = (eventId, userId, success, error)

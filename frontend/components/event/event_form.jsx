@@ -22,27 +22,37 @@ class EventForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToCreatedEvent = this.navigateToCreatedEvent.bind(this);
     this.navLink = this.navLink.bind(this);
-    // this.handleDateChange = this.handleDateChange.bind(this);
-    // this.handleEndDateChange = this.handleEndDateChange.bind(this);
+    this.addCategory = this.addCategory.bind(this);
+    this.setTime = this.setTime.bind(this);
   }
   handleSubmit(e){
     e.preventDefault();
-    const tempStartDate = this.state.start_date.toLocaleString().replace('/[0-9][0-9]:.*/', '');
-    const tempEndDate = this.state.end_date.toLocaleString().replace('/[0-9][0-9]:.*/', '');
-    const tempStartTime = this.state.start_time.toLocaleString().replace('//')
-    this.setState({
-      start_date_time: new Date(this.state.start_date + " " + this.state.start_time),
-      end_date_time: new Date(this.state.end_date + " " + this.state.end_time)
-    })
-    const event = this.state;
-    debugger;
-    if(this.props.formType === 'new_event'){
-      this.props.createEvent(event);
-    } else {
-      this.props.updateEvent(event);
-    }
-    this.navigateToCreatedEvent();
+    this.setTime();
+
   };
+
+  setTime(){
+    const tempStartDate = this.state.start_date.toString().slice(0,15);
+    const tempEndDate = this.state.end_date.toString().slice(0,15);
+    const tempStartTime = this.state.start_time.toString().slice(16);
+    const tempEndTime = this.state.end_time.toString().slice(16);
+
+    debugger;
+    this.setState({
+      start_date_time: (tempStartDate + " " + tempStartTime),
+      end_date_time: (tempEndDate + " " + tempEndTime)
+    }, ()=> {
+      const event = this.state;
+      if(this.props.formType === 'new_event'){
+        this.props.createEvent(event);
+      } else {
+        this.props.updateEvent(event);
+      }
+      this.navigateToCreatedEvent();
+    }
+  )
+}
+
 
   navigateToCreatedEvent() {
     this.props.router.push(`/events/${this.props.eventShow.id}`);
@@ -56,6 +66,7 @@ class EventForm extends React.Component{
 
   addCategory(e){
     e.preventDefault();
+    debugger;
     this.setState({
       categories: this.state.categories.concat([e.currentTarget.value])
     })
@@ -110,7 +121,6 @@ class EventForm extends React.Component{
         start_time: event.start_time,
         end_date: event.end_date,
         start_date: event.start_date
-
       })
     }
   }
@@ -140,6 +150,7 @@ class EventForm extends React.Component{
   // }
 
   render(){
+    debugger;
     return(
       <div className="making-event">
         <h1>Create An Event</h1>
@@ -157,11 +168,10 @@ class EventForm extends React.Component{
                   <Datetime value={this.state.start_date} timeFormat={false}
                     inputProps={{readOnly:true, placeholder: "Start Date"}}
                     closeOnSelect={true}
-                    onChange={(newDate) => {debugger;
-                      return(this.setState({
+                    onChange={(newDate) => (this.setState({
                       start_date: newDate._d
                     })
-                  )}}/>
+                  )}/>
                 <Datetime value={this.state.start_time} dateFormat={false}
                   inputProps={{readOnly:true, placeholder: "Start Time"}}
                   closeOnSelect={true}
@@ -198,10 +208,10 @@ class EventForm extends React.Component{
           </textarea>
           <h2>2. Additional Settings</h2>
           <div className="category-buttons">
-            <button type="button" onClick={this.addCategory} value="sample1">Sample 1</button>
-            <button type="button" onClick={this.addCategory} value="sample2">Sample 2</button>
-            <button type="button" onClick={this.addCategory} value="sample3">Sample 3</button>
-            <button type="button" onClick={this.addCategory} value="sample4">Sample 4</button>
+            <button type="button" onClick={this.addCategory} value="Books">Books</button>
+            <button type="button" onClick={this.addCategory} value="Electronic">Electronic</button>
+            <button type="button" onClick={this.addCategory} value="Furniture">Furniture</button>
+            <button type="button" onClick={this.addCategory} value="Clothing">Clothing</button>
           </div>
           <div className="last-part">
             <h3>Nice job! You're almost done.</h3>
