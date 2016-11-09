@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import {getEvents, getEvent } from '../actions/event_actions';
+import {fetchUser} from '../actions/session_actions';
 // react router
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
@@ -33,7 +34,9 @@ const Root = ({store}) => {
   const fetchEvent = (nextState) =>{
     store.dispatch(getEvent(nextState.params.id));
   }
-
+  const getUser = (nextState) => {
+    store.dispatch(fetchUser(nextState.params.id));
+  }
   // const checkUserId = (nextState, ) => {
   //   if(store.getState().eventShow.host_id === currentUser.id){
   //     replace(`/events/${eventShow.id}`);
@@ -62,7 +65,7 @@ const Root = ({store}) => {
           <Route path="/events/:id" component={EventDetailContainer}/>
           <Route path="/new_event" component={EventFormContainer} onEnter={_ensureLoginUser}/>
           <Route path="/events/:id/update" component={EventFormContainer} onEnter={fetchEvent}/>
-          <Route path="/users/:id" component={UserContainer} />
+          <Route path="/users/:id" component={UserContainer} onEnter={getUser} />
         </Route>
       </Router>
     </Provider>

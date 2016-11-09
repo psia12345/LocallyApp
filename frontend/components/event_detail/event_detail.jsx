@@ -54,7 +54,7 @@ class EventDetail extends React.Component {
             <p>by {event.email}</p>
           </div>
         </div>
-        <div className="buttons">
+        <div className="event-buttons">
           <button onClick={this.handleClick}
             disabled
             value="Interested">Interested</button>
