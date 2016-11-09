@@ -16,8 +16,8 @@ class Api::EventsController < ApplicationController
     category_ids = params[:event][:categories].map do |category|
       Category.find_by_name(category).id
     end
-    @event.start_date_time = "#{params[:event][:start_date]} #{params[:event][:start_time]}"
-    @event.end_date_time = "#{params[:event][:end_date]} #{params[:event][:end_time]}"
+    # @event.start_date_time = "#{params[:event][:start_date]} #{params[:event][:start_time]}"
+    # @event.end_date_time = "#{params[:event][:end_date]} #{params[:event][:end_time]}"
     if @event.save
       @event.tag_category_ids = category_ids
       render :show
@@ -42,10 +42,6 @@ class Api::EventsController < ApplicationController
     else
       render json: @event.errors.full_messages, status: 422
     end
-  end
-
-  def add_event_attendee
-
   end
 
   private

@@ -7,6 +7,7 @@ export const DELETE_EVENT = 'DELETE_EVENT';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const CREATE_EVENT = 'CREATE_EVENT';
 export const REMOVE_EVENT = 'REMOVE_EVENT';
+export const ADD_ATTENDEE = 'ADD_ATTENDEE';
 
 export const getEvents = () => ({
   type: GET_EVENTS
@@ -50,4 +51,9 @@ export const removeEvent = (event) => ({
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
+})
+
+export const addAttendee = (ids) => ({
+  type: ADD_ATTENDEE,
+  ids
 })

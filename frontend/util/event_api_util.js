@@ -46,4 +46,12 @@ export const remove = (id, success, error) => {
   })
 }
 
-export const attending = (eventId, userId, success, error)
+export const attending = (ids, success, error) => {
+  $.ajax({
+    method: 'POST',
+    url: 'api/event_attendees',
+    data: {event_attendee: ids},
+    success,
+    error
+  })
+}

@@ -1,10 +1,10 @@
 import { index, show, create,
-  update, remove } from '../util/event_api_util';
+  update, remove, attending } from '../util/event_api_util';
 //some actions import here
 import { GET_EVENT, receiveErrors,
          receiveEvent, removeEvent,
          receiveEvents, GET_EVENTS, UPDATE_EVENT,
-         CREATE_EVENT, DELETE_EVENT
+         CREATE_EVENT, DELETE_EVENT, ADD_ATTENDEE
       } from '../actions/event_actions';
 
 import {hashHistory} from 'react-router';
@@ -18,6 +18,7 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveEvent);
     hashHistory.push(`/events/${event.id}`)
   }
+  const successAddAttendeeCallback = event => dispatch(receiveEvent(event));
 
   switch(action.type){
     case GET_EVENT:
@@ -35,6 +36,8 @@ export default ({getState, dispatch}) => next => action => {
     case DELETE_EVENT:
       remove(action.id, successEventsCallback, errorCallback);
       return next(action);
+    case ADD_ATTENDEE:
+      attending(action.ids, successAddAttendeeCallback, errorCallback);
     default:
       return next(action);
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EventDetail from './event_detail';
-import { getEvent, deleteEvent, updateEvent } from '../../actions/event_actions';
+import { getEvent, deleteEvent, addAttendee } from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownprops) => ({
   event: state.eventShow,
@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownprops) => ({
 const mapDispatchToProps = dispatch => ({
   getEvent: (id) => dispatch(getEvent(id)),
   deleteEvent: (id) => dispatch(deleteEvent(id)),
-  updateEvent: (id) => dispatch(updateEvent(id))
+  addAttendee: (id) => dispatch(addAttendee(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventDetail);

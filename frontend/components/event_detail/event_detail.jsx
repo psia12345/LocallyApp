@@ -36,7 +36,9 @@ class EventDetail extends React.Component {
 
   handleClick(e){
     e.preventDefault();
-
+    this.props.addAttendee({
+      event_id: this.props.event.id,
+      attendee_id: this.props.currentUser.id})
   }
 
   render(){
@@ -53,8 +55,11 @@ class EventDetail extends React.Component {
           </div>
         </div>
         <div className="buttons">
-          <button onClick={this.handleClick} value="Interested">Interested</button>
-          <button onClick={this.handleClick} value="Attending">Attending</button>
+          <button onClick={this.handleClick}
+            disabled
+            value="Interested">Interested</button>
+          <button onClick={this.handleClick}
+             value="Attending">Attending</button>
         </div>
         <div className="main-content">
           <div className="event-main">
