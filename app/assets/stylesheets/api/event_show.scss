@@ -34,6 +34,9 @@
     margin-top: 10px;
     cursor: pointer;
   }
+  button:disabled{
+    background-color: gray;
+  }
 }
 .main-content{
   display: flex;

@@ -28,7 +28,6 @@ class EventForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     this.setTime();
-
   };
 
   setTime(){
@@ -37,7 +36,6 @@ class EventForm extends React.Component{
     const tempStartTime = this.state.start_time.toString().slice(16);
     const tempEndTime = this.state.end_time.toString().slice(16);
 
-    debugger;
     this.setState({
       start_date_time: (tempStartDate + " " + tempStartTime),
       end_date_time: (tempEndDate + " " + tempEndTime)
@@ -50,8 +48,7 @@ class EventForm extends React.Component{
       }
       this.navigateToCreatedEvent();
     }
-  )
-}
+  )}
 
 
   navigateToCreatedEvent() {
@@ -66,23 +63,10 @@ class EventForm extends React.Component{
 
   addCategory(e){
     e.preventDefault();
-    debugger;
     this.setState({
       categories: this.state.categories.concat([e.currentTarget.value])
     })
   }
-
-  // handleDateChange(newDate){
-  //   this.setState({
-  //     start_date_time: newDate
-  //   });
-  // }
-  //
-  // handleEndDateChange(newDate){
-  //   this.setState({
-  //     end_date_time: newDate
-  //   })
-  // }
 
   componentDidMount(){
     if (typeof this.props.id !== 'undefined' && this.props.formType !== 'new_event'){
@@ -150,7 +134,6 @@ class EventForm extends React.Component{
   // }
 
   render(){
-    debugger;
     return(
       <div className="making-event">
         <h1>Create An Event</h1>

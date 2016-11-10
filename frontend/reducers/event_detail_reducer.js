@@ -21,11 +21,10 @@ const EventDetailReducer = (oldstate = defaultEventDetailState, action) => {
   Object.freeze(oldstate);
   switch(action.type){
     case RECEIVE_EVENT:
-
       const start_date = dateFormat(action.event.start_date_time, "dddd, mmmm dS, yyyy");
-      const start_time = dateFormat(action.event.start_date_time, "h:MM:ss TT");
+      const start_time = dateFormat(action.event.start_date_time, "h:MM TT");
       const end_date = dateFormat(action.event.end_date_time, "dddd, mmmm dS, yyyy");
-      const end_time = dateFormat(action.event.end_date_time, "h:MM:ss TT");
+      const end_time = dateFormat(action.event.end_date_time, "h:MM TT");
 
       const requestedEvent = action.event;
       const newState = merge({}, oldstate, action.event, {start_time, start_date, end_time, end_date});

@@ -1,6 +1,8 @@
 class Api::EventAttendeesController < ApplicationController
   def show
     @event_attendee = EventAttendeeJoinTable.find(params[:id])
+    @event = @event_attendee.event
+    render 'api/events/show'
   end
 
   def create
@@ -9,7 +11,8 @@ class Api::EventAttendeesController < ApplicationController
     @event_attendee = EventAttendeeJoinTable.new(event_attendee_params)
     unless @event.attendee_ids.include?(id)
       @event_attendee.save
-      render :show
+      @attendee_ids = @event.attendee_ids
+      render 'api/events/show'
     end
   end
 

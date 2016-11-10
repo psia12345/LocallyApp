@@ -13,56 +13,60 @@ h4{
 
 .category-square{
   display: block;
-  width: 20%;
-  height: auto;
-  min-height: 180px;
+  width: 30%;
+  height: 180px;
   background: no-repeat;
-  min-width: 300px;
   // background-size: cover;
+
   border-radius: 3px;
-  margin: 3px;
+  margin: 1%;
+  position: relative;
   // background: no-repeat fixed center;
 }
 .category-mini{
   display: block;
-  width: 20%;
-  height: auto;
-  min-height: 180px;
+  width: 30%;
+  height: 180px;
   background: no-repeat;
   background-size: cover;
   background-position: bottom;
-  min-width: 300px;
+  // min-width: 300px;
   // background-size: cover;
   border-radius: 3px;
-  margin: 3px;
+  margin: 1%;
   // background: no-repeat fixed center;
+  position: relative;
 }
 
 .category-long{
   display: block;
-  width: 30%;
-  min-width: 600px;
-  height: auto;
-  min-height: 180px;
+  width: 62%;
+  // min-width: 600p
+  height: 180px;
   background: no-repeat;
   border-radius: 3px;
-  margin: 3px;
+  margin: 1%;
   background-position: bottom;
+  position: relative;
 }
 .category-long-center-image{
   display: block;
-  width: 30%;
-  min-width: 600px;
-  height: auto;
-  min-height: 180px;
+  width: 62%;
+  // min-width: 600px;
+  height: 180px;
   background: no-repeat;
   border-radius: 3px;
-  margin: 3px;
+  margin: 1%;
+  position: relative;
 }
 .row1, .row2, .row3{
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
 }
 
 // .clearfix:after {

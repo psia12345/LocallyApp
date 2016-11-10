@@ -1,0 +1,82 @@
+.header-content{
+  margin-bottom: 20px;
+  .event-registration-header{
+    font-size: 25px;
+    color: black;
+    margin: 3px;
+    margin-bottom: 10px;
+  }
+  p{
+    font-size: 15px;
+    margin: 3px;
+  }
+}
+.order-summary{
+  border: 1px solid #dddddd;
+  width: 90%;
+  margin-bottom: 20px;
+  .order-summary-header{
+    background-color: lightgray;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  th{
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px;
+  }
+  td{
+    font-size: 15px;
+    padding: 5px;
+  }
+}
+.event-registration{
+  display:flex;
+  margin-top: 20px;
+  justify-content: center;
+  border-radius: 5px;
+}
+.registration-form{
+  border: 1px solid #dddddd;
+  margin-bottom: 20px;
+  width: 90%;
+  border-radius: 5px;
+  .registration-header{
+    background-color: lightgray;
+    padding: 5px;
+    display: block;
+    border-radius: 5px;
+  }.form-banner{
+    border: 1px solid yellow;
+    background-color: lightyellow;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+  }.form-text{
+    margin-left: 25%;
+    padding: 5px;
+  }
+  .form-field{
+    display:flex;
+    input{
+      display: block;
+      width: 70%;
+      margin: 3px;
+    }label{
+      margin: 3px;
+    }
+  }
+  .form-button{
+    background-color: green;
+    float: right;
+    margin-right: 20px;
+  }
+}
+.clearfix:after {
+   content: "";
+   visibility: hidden;
+   display: block;
+   height: 10px;
+   clear: both;
+}
