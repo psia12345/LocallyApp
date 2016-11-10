@@ -5,8 +5,8 @@ class EventDetail extends React.Component {
   constructor(props){
     super(props)
     this.navigateToEventListing = this.navigateToEventListing.bind(this);
-    this.handleAttendingClick = this.handleAttendingClick.bind(this);
-    this.checkForAttendingUser = this.checkForAttendingUser.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
   componentDidMount(){
     const eventId = this.props.params.id
@@ -35,78 +35,95 @@ class EventDetail extends React.Component {
     this.props.router.push("/events");
   }
 
-  handleAttendingClick(e){
+  handleClick(e){
+    e.preventDefault();
+    if (e.currentTarget.value === "Attending"){
+      this.props.router.push(`/events/${this.props.event.id}/register`)
+    } else {
+      if (this.props.currentUser !== null &&
+        !this.props.event.interested_ids.includes(this.props.currentUser.id)
+      ){
+        this.props.addInterested({
+          event_id: this.props.event.id,
+          user_id: this.props.currentUser.id
+        })
+      }
+    }
+  }
+
+  checkForAttendingUser(){
+    let attendee_ids;
+    if (typeof this.props.event.attendees !== 'undefined'){
+      attendee_ids = this.props.event.attendees.map((attendee) => attendee.id)
+    }
+    if (typeof attendee_ids !== 'undefined' && attendee_ids.includes(this.props.currentUser.id)){
+      return (true)
+    }
+  }
+
+  checkForInterestedUser(){
+    let interested_ids;
+    if (typeof this.props.event.interested !== 'undefined'){
+      interested_ids = this.props.event.interested.map((interested_user) => interested_user.id)
+    }
+    if (typeof interested_ids !== 'undefined' && interested_ids.includes(this.props.currentUser.id)){
+      return (true)
+    }
+  }
+
+  handleInterestedClick(){
     e.preventDefault();
     this.checkForAttendingUser();
     this.props.router.push(`/events/${this.props.event.id}/register`)
   }
 
-  handleInterestedClick(e){
+  handleCancel(e){
     e.preventDefault();
-
-  }
-
-  checkForAttendingUser(){
-    // const attendee_ids = this.props.event.attendee_ids
-    // if (attendee_ids !== undefined && attendee_ids.includes(this.props.currentUser.id)){
-    //   return (true)
-    // }
-  }
-
-  checkForInterestedUser(){
-    // const interested_ids = this.props.event.interested_ids
-    // if (interested_ids !== undefined && interested_ids.includes(this.props.currentUser.id)){
-    //   return (true)
-    // }
-  }
-
-  handleInterestedClick(){
-
-  }
-
-  handleCancelReservation(){
-
+    if (e.currentTarget.value === "Cancel Reservation"){
+      this.props.removeAttendee(this.props.event.id);
+    } else {
+      this.props.removeInterested(this.props.event.id)
+    }
   }
 
   displaybuttons(){
     if (this.checkForAttendingUser() && this.checkForInterestedUser()) {
       return (<div className="event-buttons">
-        <button onClick={this.handleInterestedClick}
+        <button className="interested" onClick={this.handleClick}
           value="Interested">
-          <img
-            src="/assets/bookmark-icon.png"
-            />Interested</button>
-        <button onClick={this.handleCancelReservation}
+          <div className="bookmarked"></div>Cancel Bookmarked</button>
+          <button onClick={this.handleCancel}
           value="Cancel Reservation">Cancel Reservation</button>
       </div>)
 
     } else if(this.checkForAttendingUser()){
       return (<div className="event-buttons">
-        <button onClick={this.handleInterestedClick}
+        <button className="interested" onClick={this.handleClick}
           value="Interested">
-          <img
-            src="/assets/bookmark-icon.png"
-            className="bookmark-icon"
-            />Interested</button>
-        <button onClick={this.handleCancelReservation}
+          <div className="bookmark"></div>Interested</button>
+          <button onClick={this.handleCancel}
           value="Cancel Reservation">Cancel Reservation</button>
       </div>)
     } else if (this.checkForInterestedUser()){
       return (<div className="event-buttons">
-        <button onClick={this.handleInterestedClick}
-          value="Interested">Cancel Bookmarked</button>
-        <button onClick={this.handleCancelReservation}
+        <button className="interested" onClick={this.handleCancel}
+          value="Interested"><div className="bookmarked"></div>Cancel Bookmarked</button>
+        <button onClick={this.handleClick}
           value="Attending">Attending</button>
       </div>)
     } else {
       return (<div className="event-buttons">
-        <button onClick={this.handleInterestedClick}
-          value="Interested">Interested</button>
-        <button onClick={this.handleAttendingClick}
+        <button className="interested" onClick={this.handleClick}
+          value="Interested"><div className="bookmark"></div>Interested</button>
+        <button onClick={this.handleClick}
           value="Attending">Attending</button>
       </div>)
 
     }
+  }
+  componentWillReceiveProps(){
+    this.checkForAttendingUser();
+    this.checkForInterestedUser();
   }
 
   render(){

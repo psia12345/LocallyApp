@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :new, :destroy]
     resources :events, only: [:index, :create, :update, :destroy, :show]
     resources :event_attendees, only: [:create, :show]
+    resources :event_interested, only: [:create, :show]
+    resources :events do
+      delete :remove_attendee
+      delete :remove_interested
+    end
   end
   root 'static_pages#root'
 end

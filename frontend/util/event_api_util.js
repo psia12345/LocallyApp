@@ -54,3 +54,33 @@ export const attending = (ids, success, error) => {
     error
   })
 }
+
+export const cancelAttending = (id, success, error) => {
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/events/${id}/remove_attendee`,
+    success,
+    error
+  })
+}
+
+
+export const interested = (ids, success, error) => {
+  $.ajax({
+    method: 'POST',
+    url: '/api/event_interested',
+    data: {event_interested: ids},
+    success,
+    error
+  })
+}
+
+
+export const cancelSave = (id, success, error) => {
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/events/${id}/remove_interested`,
+    success,
+    error
+  })
+}

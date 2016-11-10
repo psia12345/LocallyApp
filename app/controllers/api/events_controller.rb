@@ -2,7 +2,7 @@ class Api::EventsController < ApplicationController
   def new
     #can probably ignore new method
   end
-  
+
   def show
     @event = Event.find_by_id(params[:id])
     @attendee_ids = @event.attendee_ids
@@ -43,6 +43,22 @@ class Api::EventsController < ApplicationController
     else
       render json: @event.errors.full_messages, status: 422
     end
+  end
+
+  def remove_attendee
+    @event = Event.find(params[:event_id])
+    @attendee_ids = @event.attendee_ids
+    new_id = @attendee_ids - [current_user.id]
+    @event.attendee_ids = new_id
+    render :show
+  end
+
+  def remove_interested
+    @event = Event.find(params[:event_id])
+    @interested_ids = @event.interested_user_ids
+    new_id = @interested_ids - [current_user.id]
+    @event.interested_user_ids = new_id
+    render :show
   end
 
   private

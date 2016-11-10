@@ -11,19 +11,20 @@ class Api::EventAttendeesController < ApplicationController
     @event_attendee = EventAttendeeJoinTable.new(event_attendee_params)
     unless @event.attendee_ids.include?(id)
       @event_attendee.save
-      @attendee_ids = @event.attendee_ids
-      render 'api/events/show'
     end
+    @attendee_ids = @event.attendee_ids
+    render 'api/events/show'
   end
 
-  def destroy
-    # @event = Event.find(params[:event_attendee][:event_id])
-    # id = params[:event_attendee][:attendee_id].to_i
-    # if @event.attendee_ids.include?(id)
-    #   ids = @event.attendee_ids
-    #
-    # end
-  end
+  # def destroy
+  #   @event = Event.find(params[:event_attendee][:event_id])
+  #   id = params[:event_attendee][:attendee_id].to_i
+  #   if @event.attendee_ids.include?(id)
+  #     ids = @event.attendee_ids - id
+  #     @event.attendee_ids = ids
+  #   end
+  #   render 'api/events/show'
+  # end
 
   private
   def event_attendee_params

@@ -1,10 +1,11 @@
 import { index, show, create,
-  update, remove, attending } from '../util/event_api_util';
+  update, remove, attending, cancelAttending, interested, cancelSave } from '../util/event_api_util';
 //some actions import here
 import { GET_EVENT, receiveErrors,
          receiveEvent, removeEvent,
          receiveEvents, GET_EVENTS, UPDATE_EVENT,
-         CREATE_EVENT, DELETE_EVENT, ADD_ATTENDEE
+         CREATE_EVENT, DELETE_EVENT, ADD_ATTENDEE,
+         REMOVE_ATTENDEE, ADD_INTERESTED, REMOVE_INTERESTED
       } from '../actions/event_actions';
 
 import {hashHistory} from 'react-router';
@@ -38,6 +39,16 @@ export default ({getState, dispatch}) => next => action => {
       return next(action);
     case ADD_ATTENDEE:
       attending(action.ids, successAddAttendeeCallback, errorCallback);
+      return next(action);
+    case REMOVE_ATTENDEE:
+      cancelAttending(action.id, successAddAttendeeCallback, errorCallback);
+      return next(action);
+    case ADD_INTERESTED:
+      interested(action.ids, successAddAttendeeCallback, errorCallback);
+      return next(action);
+    case REMOVE_INTERESTED:
+      cancelSave(action.id, successAddAttendeeCallback, errorCallback);
+      return next(action);
     default:
       return next(action);
 
