@@ -89,7 +89,7 @@ class EventDetail extends React.Component {
   displaybuttons(){
     if (this.checkForAttendingUser() && this.checkForInterestedUser()) {
       return (<div className="event-buttons">
-        <button className="interested" onClick={this.handleClick}
+        <button className="interested" onClick={this.handleCancel}
           value="Interested">
           <div className="bookmarked"></div>Cancel Bookmarked</button>
           <button onClick={this.handleCancel}
@@ -121,9 +121,13 @@ class EventDetail extends React.Component {
 
     }
   }
-  componentWillReceiveProps(){
-    this.checkForInterestedUser();
+  componentWillMount(){
     this.checkForAttendingUser();
+    this.checkForInterestedUser();
+  }
+  componentWillUpdate(){
+    this.checkForAttendingUser();
+    this.checkForInterestedUser();
   }
 
   render(){
@@ -132,7 +136,7 @@ class EventDetail extends React.Component {
 
     return(
       <section className="event-details">
-        { this.checkForAttendingUser() ? (<h3>You're going to this event! View your reservation.</h3>) : (<div></div>)}
+        { this.checkForAttendingUser() ? (<h3>You're going to this event! <Link to={`users/${currentUser.id}`}>View your Upcoming Events.</Link></h3>) : (<div></div>)}
         <div className="event-header">
             <img src={event.image_url} />
           <div className="right-element">

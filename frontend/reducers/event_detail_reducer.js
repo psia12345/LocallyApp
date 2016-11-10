@@ -27,7 +27,7 @@ const EventDetailReducer = (oldstate = defaultEventDetailState, action) => {
       const end_time = dateFormat(action.event.end_date_time, "h:MM TT");
 
       const requestedEvent = action.event;
-      const newState = merge({}, oldstate, action.event, {start_time, start_date, end_time, end_date});
+      const newState = merge({}, action.event, {start_time, start_date, end_time, end_date});
 
       return newState;
     case DELETE_EVENT:

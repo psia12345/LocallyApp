@@ -3,6 +3,7 @@ import {Link, route} from 'react-router';
 
 const RegistrationSuccess = ({event}) => (
   <div className="registration-success">
+    <Link to={`/events/${event.id}`}>Back to {event.title}</Link>
     <div className="register-event-box">
       <h2>You're going to {event.title}!</h2>
       <p>Your order has been saved to

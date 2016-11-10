@@ -2,6 +2,16 @@
   width: 75%;
   margin: 20px auto;
   border: 1px solid #dddddd;
+  h3{
+    border: 1px solid yellow;
+    background-color: lightyellow;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    a, a:visited{
+      color: #5D7078;
+    }
+  }
 }
 .event-header{
   display: flex;

@@ -8,10 +8,45 @@ class User extends React.Component{
     super(props);
     this.redirectToEvents = this.redirectToEvents.bind(this);
     this.handleSavedEvent = this.handleSavedEvent.bind(this);
+    this.handleAttendingEvent = this.handleAttendingEvent.bind(this);
+    this.handleManageEvent = this.handleManageEvent.bind(this);
   }
 
   handleSavedEvent(e){
     e.preventDefault();
+    return(
+      <div className="event-lists">
+        <ul>
+          {this.props.currentUser.interested_events.map( (event, index) =>
+            (<li key={index}><EventIndexItem event={event}/></li>))}
+          </ul>
+        </div>
+    )
+  }
+
+  handleAttendingEvent(e){
+    e.preventDefault();
+    return(
+      <div className="event-lists">
+        <ul>
+          {this.props.currentUser.attending_events.map( (event, index) =>
+            (<li key={index}><EventIndexItem event={event}/></li>))}
+        </ul>
+      </div>
+    )
+  }
+
+  handleManageEvent(e){
+    e.preventDefault();
+    return(
+      <div className="event-lists">
+        <ul>
+          {this.props.currentUser.host_events.map( (event, index) =>
+            (<li key={index}><EventIndexItem event={event}/></li>))}
+        </ul>
+      </div>
+    )
+
   }
 
   redirectToEvents(){
@@ -25,15 +60,15 @@ class User extends React.Component{
       <div>
         <h2 className="user-info">{currentUser.email}</h2>
         <div className="event-links">
-          <Link id="upcoming-events">Upcoming Events</Link>
+          <Link id="upcoming-events" onClick={this.handleAttendingEvent}>Upcoming Events</Link>
           <Link id="saved-events" onClick={this.handleSavedEvent}>Saved Events</Link>
-          <Link id="edit-event">Edit Event</Link>
+          <Link id="edit-event" onClick={this.handleManageEvent}>Edit Event</Link>
         </div>
         <div className="event-lists">
           <ul>
             {attending_events.map( (event, index) =>
               (<li key={index}><EventIndexItem event={event}/></li>))}
-            </ul>
+          </ul>
         </div>
         <button onClick={this.redirectToEvents}>Discover Events</button>
       </div>

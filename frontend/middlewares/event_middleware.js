@@ -5,7 +5,7 @@ import { GET_EVENT, receiveErrors,
          receiveEvent, removeEvent,
          receiveEvents, GET_EVENTS, UPDATE_EVENT,
          CREATE_EVENT, DELETE_EVENT, ADD_ATTENDEE,
-         REMOVE_ATTENDEE, ADD_INTERESTED, REMOVE_INTERESTED
+         REMOVE_ATTENDEE, ADD_INTERESTED, REMOVE_INTERESTED, getEvent
       } from '../actions/event_actions';
 
 import {hashHistory} from 'react-router';
@@ -19,7 +19,7 @@ export default ({getState, dispatch}) => next => action => {
     dispatch(receiveEvent);
     hashHistory.push(`/events/${event.id}`)
   }
-  const successAddAttendeeCallback = event => dispatch(receiveEvent(event));
+  const successAddAttendeeCallback = event => dispatch(getEvent(event.id));
 
   switch(action.type){
     case GET_EVENT:
