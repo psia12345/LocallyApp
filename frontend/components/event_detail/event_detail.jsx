@@ -4,12 +4,8 @@ import { Link, withRouter } from 'react-router';
 class EventDetail extends React.Component {
   constructor(props){
     super(props)
-    this.state = {
-      attending_disabled: false,
-      intersted_disabled: false
-    }
     this.navigateToEventListing = this.navigateToEventListing.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleAttendingClick = this.handleAttendingClick.bind(this);
     this.checkForAttendingUser = this.checkForAttendingUser.bind(this);
   }
   componentDidMount(){
@@ -39,18 +35,77 @@ class EventDetail extends React.Component {
     this.props.router.push("/events");
   }
 
-  handleClick(e){
+  handleAttendingClick(e){
     e.preventDefault();
     this.checkForAttendingUser();
-    this.props.addAttendee({
-      event_id: this.props.event.id,
-      attendee_id: this.props.currentUser.id})
+    this.props.router.push(`/events/${this.props.event.id}/register`)
+  }
+
+  handleInterestedClick(e){
+    e.preventDefault();
+
   }
 
   checkForAttendingUser(){
     const attendee_ids = this.props.event.attendee_ids
     if (attendee_ids !== undefined && attendee_ids.includes(this.props.currentUser.id)){
-      return (<h3>You're going to this event! View your reservation.</h3>)
+      return (true)
+    }
+  }
+
+  checkForInterestedUser(){
+    const interested_ids = this.props.event.interested_ids
+    if (interested_ids !== undefined && interested_ids.includes(this.props.currentUser.id)){
+      return (true)
+    }
+  }
+
+  handleInterestedClick(){
+
+  }
+
+  handleCancelReservation(){
+    
+  }
+
+  displaybuttons(){
+    if (this.checkForAttendingUser() && this.checkForInterestedUser()) {
+      return (<div className="event-buttons">
+        <button onClick={this.handleInterestedClick}
+          value="Interested">
+          <img
+            src="/assets/bookmark-icon.png"
+            />Interested</button>
+        <button onClick={this.handleCancelReservation}
+          value="Cancel Reservation">Cancel Reservation</button>
+      </div>)
+
+    } else if(this.checkForAttendingUser()){
+      return (<div className="event-buttons">
+        <button onClick={this.handleInterestedClick}
+          value="Interested">
+          <img
+            src="/assets/bookmark-icon.png"
+            className="bookmark-icon"
+            />Interested</button>
+        <button onClick={this.handleCancelReservation}
+          value="Cancel Reservation">Cancel Reservation</button>
+      </div>)
+    } else if (this.checkForInterestedUser()){
+      return (<div className="event-buttons">
+        <button onClick={this.handleInterestedClick}
+          value="Interested">Cancel Bookmarked</button>
+        <button onClick={this.handleCancelReservation}
+          value="Attending">Attending</button>
+      </div>)
+    } else {
+      return (<div className="event-buttons">
+        <button onClick={this.handleInterestedClick}
+          value="Interested">Interested</button>
+        <button onClick={this.handleAttendingClick}
+          value="Attending">Attending</button>
+      </div>)
+
     }
   }
 
@@ -60,7 +115,7 @@ class EventDetail extends React.Component {
 
     return(
       <section className="event-details">
-        {this.checkForAttendingUser()}
+        { this.checkForAttendingUser() ? (<h3>You're going to this event! View your reservation.</h3>) : (<div></div>)}
         <div className="event-header">
             <img src={event.image_url} />
           <div className="right-element">
@@ -69,13 +124,7 @@ class EventDetail extends React.Component {
             <p>by {event.email}</p>
           </div>
         </div>
-        <div className="event-buttons">
-          <button onClick={this.handleClick}
-
-            value="Interested">Interested</button>
-          <button onClick={this.handleClick}
-            value="Attending">Attending</button>
-        </div>
+        {this.displaybuttons()}
         <div className="main-content">
           <div className="event-main">
             <p className="section-header">DESCRIPTION</p>

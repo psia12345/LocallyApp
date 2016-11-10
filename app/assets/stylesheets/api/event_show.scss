@@ -34,9 +34,11 @@
     margin-top: 10px;
     cursor: pointer;
   }
-  button:disabled{
-    background-color: gray;
-  }
+  // .bookmark-icon{
+  //   display: inline;
+  //   background-color: white;
+  //   opactiy: 0.5;
+  // }
 }
 .main-content{
   display: flex;

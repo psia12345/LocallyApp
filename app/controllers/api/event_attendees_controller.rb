@@ -16,6 +16,15 @@ class Api::EventAttendeesController < ApplicationController
     end
   end
 
+  def destroy
+    # @event = Event.find(params[:event_attendee][:event_id])
+    # id = params[:event_attendee][:attendee_id].to_i
+    # if @event.attendee_ids.include?(id)
+    #   ids = @event.attendee_ids
+    #
+    # end
+  end
+
   private
   def event_attendee_params
     params.require(:event_attendee).permit(:event_id, :attendee_id)
