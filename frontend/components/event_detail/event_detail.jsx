@@ -122,8 +122,8 @@ class EventDetail extends React.Component {
     }
   }
   componentWillReceiveProps(){
-    this.checkForAttendingUser();
     this.checkForInterestedUser();
+    this.checkForAttendingUser();
   }
 
   render(){
