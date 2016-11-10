@@ -47,17 +47,17 @@ class EventDetail extends React.Component {
   }
 
   checkForAttendingUser(){
-    const attendee_ids = this.props.event.attendee_ids
-    if (attendee_ids !== undefined && attendee_ids.includes(this.props.currentUser.id)){
-      return (true)
-    }
+    // const attendee_ids = this.props.event.attendee_ids
+    // if (attendee_ids !== undefined && attendee_ids.includes(this.props.currentUser.id)){
+    //   return (true)
+    // }
   }
 
   checkForInterestedUser(){
-    const interested_ids = this.props.event.interested_ids
-    if (interested_ids !== undefined && interested_ids.includes(this.props.currentUser.id)){
-      return (true)
-    }
+    // const interested_ids = this.props.event.interested_ids
+    // if (interested_ids !== undefined && interested_ids.includes(this.props.currentUser.id)){
+    //   return (true)
+    // }
   }
 
   handleInterestedClick(){
@@ -65,7 +65,7 @@ class EventDetail extends React.Component {
   }
 
   handleCancelReservation(){
-    
+
   }
 
   displaybuttons(){

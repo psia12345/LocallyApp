@@ -6,9 +6,10 @@
 .event-header{
   display: flex;
   border-bottom: 1px solid #dddddd;
+  flex-wrap: wrap;
   img{
-    background-image: url();
-    height: auto;
+    height: 300px;
+    min-width: 400px;
   }
   .right-element{
     margin: 10px;
@@ -43,17 +44,21 @@
 .main-content{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   .section-header{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: bold;
+  }pre{
+    white-space: pre-wrap;
   }
   .event-main{
-    width: 70%;
+    width: 69%;
+    margin-right: 2%;
   }
   .side-content{
-    width: 30%;
+    width: 29%;
     .event-control{
       display: flex;
       button{

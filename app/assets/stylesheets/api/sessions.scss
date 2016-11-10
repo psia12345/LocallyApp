@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .navbar {
-  background-color: white;
+  background-color: #c7bebe;
   border-bottom: 1px solid #dddddd;
   height: auto;
   font-size: 20px;
@@ -12,7 +12,7 @@
     border-right: 1px solid #dddddd;
     a{
       text-decoration: none;
-      color: #5D7078;
+      color: white;
       padding: 10px;
       display: block;
     }
@@ -29,7 +29,7 @@
         display: block;
         text-decoration: none;
         padding: 10px;
-        color: #5D7078;
+        color: white;
       } #login, #logout, #guest {
         border-left: 1px solid #dddddd;
       }

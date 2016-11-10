@@ -2,7 +2,7 @@ class Api::EventsController < ApplicationController
   def new
     #can probably ignore new method
   end
-
+  
   def show
     @event = Event.find_by_id(params[:id])
     @attendee_ids = @event.attendee_ids
