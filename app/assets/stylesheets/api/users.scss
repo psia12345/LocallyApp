@@ -4,10 +4,15 @@
 
 .event-links{
   text-align: center;
+  display: flex;
+  justify-content: center;
   a{
     padding: 5px;
     margin: 10px;
     cursor: pointer;
+  }.clicked{
+    border-bottom: 5px solid blue;
+    border-radius: 5px;
   }
   border-bottom: 1px solid #dddddd;
 }
@@ -16,4 +21,30 @@
   margin: 10px;
   font-size: 20px;
   font-weight: normal;
+}
+.user-specific-events{
+  .single-event{
+    border-radius: 5px;
+    border: 1px solid black;
+    display: block;
+    width: 250px;
+    margin: 20px;
+    img{
+      margin: 0 auto;
+      padding-top: 25px;
+      border-radius: 5px;
+    }.event-info{
+      text-align: center;
+      padding: 10px;
+    }
+  }ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li:hover{
+      -webkit-box-shadow: -7px -4px 25px -1px rgba(0,0,0,0.75);
+      -moz-box-shadow: -7px -4px 25px -1px rgba(0,0,0,0.75);
+      box-shadow: -7px -4px 25px -1px rgba(0,0,0,0.75);
+    }
+  }
 }

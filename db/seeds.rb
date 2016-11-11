@@ -19,7 +19,7 @@ We rent tables at $5.00 each
 Each space is $30.00 includes a lunch Ticket
 only 50 spaces available",
   host_id: 1,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478766718/Community-Yard-Sale-Press-Release_vjm3ke.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478766718/Community-Yard-Sale-Press-Release_vjm3ke.jpg',
   start_date_time: "2016-11-12 7:00:00 AM",
   end_date_time: "November 12th, 2016 2:00:00 PM"
 })
@@ -29,7 +29,7 @@ Urban Garage Sale is an annual event put on by the local clothing maker Heavy Ro
 For more Information
 http://www.urbangaragesale.com/",
   host_id: 2,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478767048/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25064487_2F182718664675_2F1_2Foriginal_axq0wy.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478767048/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25064487_2F182718664675_2F1_2Foriginal_axq0wy.jpg',
   start_date_time: "2016-11-26 10:00:00 AM",
   end_date_time: "November 27th, 2016 4:00:00 PM"
 })
@@ -51,7 +51,7 @@ $20 for Wedding related businesses. / 6 foot table
 
 We will be selective about the businesses that will be added. If you would like to be considered, please send an email to shopstacysnow@gmail.com",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478767063/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25258030_2F49127062948_2F1_2Foriginal_mxuyy9.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478767063/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25258030_2F49127062948_2F1_2Foriginal_mxuyy9.jpg',
   start_date_time: "2017-03-26 11:00:00 AM PST",
   end_date_time: "2017-03-26 2:00:00 PM PST"
 })
@@ -63,12 +63,12 @@ Almost 190 tables in a covered car park selling an exciting wide variety of new 
 Admission is free.
 
 Parking, Food & Drinks available.",
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478767318/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25465063_2F103205612365_2F1_2Foriginal_imyn6e.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478767318/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25465063_2F103205612365_2F1_2Foriginal_imyn6e.jpg',
   host_id: 1,
   start_date_time: "2016-12-03 9:00:00 AM",
   end_date_time: "2016-12-03 2:30:00 PM"
 })
-Event.create({title: "Electronic Gadgets",
+Event.create({title: "Kitchen Knives Sale",
   description: "IT'S THAT TIME OF YEAR AGAIN, GARAGE SALE!
 For those of you that may not know what our Garage Sales are all about, here's the deal. We go to Japan and visit knife makers. We visit ones we normally carry, and buy up stock we don't normally bring in, and we visit knife makers we DON'T normally carry and ask them what they have that is impressive. THEN, we bring it all back to you to gawk and drool over. (And for us to gawk and drool over also, to be honest.)
 The Garage Sale is about prototypes, knives by new makers, retired samples, budget knives, scratch and dent, and unique one of a kind finds. Most importantly it's a ton of fun!
@@ -79,7 +79,7 @@ November 7th, 10:00am (MDT, Calgary time)  – November 13th, 11:59pm.
 
 Location: 4215 Main Street, Vancouver, V5V 3P8",
   host_id: 2,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478767451/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25576344_2F174380013873_2F1_2Foriginal_im7kgz.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478767451/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25576344_2F174380013873_2F1_2Foriginal_im7kgz.jpg',
   start_date_time: "Mon, 7 Nov 2016, 10:00 AM",
   end_date_time: "Sun, 13 Nov 2016, 6:00 PM"
 })
@@ -88,7 +88,7 @@ Event.create({title: "Christmas Community Garage Sale Fundraiser 2016",
 A sausage sizzle will also be available to cater for hungry bargain hunters.
 Thank you for your support!",
   host_id: 2,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478767932/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24809645_2F109903364723_2F1_2Foriginal_nypj1u.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478767932/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24809645_2F109903364723_2F1_2Foriginal_nypj1u.jpg',
   start_date_time: "30 Nov 2016, 10:00 AM PST",
   end_date_time: "30 Nov 2016, 2:00 PM PST"
 })
@@ -126,7 +126,7 @@ Where can I contact the organizer with any questions?
 Email:  adella.sutton@townsquaremedia.com - or - call Christina at the office at 406-248-7827.
 Please note that on Friday for set up - we are on site.  Your best bet is to come up to the event site & ask us questions when you get there.",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478768090/https-_2F_2Fcdn.evbuc.com_2Fimages_2F18595685_2F135349775391_2F1_2Foriginal_zsvazw.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478768090/https-_2F_2Fcdn.evbuc.com_2Fimages_2F18595685_2F135349775391_2F1_2Foriginal_zsvazw.jpg',
   start_date_time: "24 Jun 2017, 7:00 AM PST",
   end_date_time: "24 Jun 2017, 3:00 PM PST"
 })
@@ -138,7 +138,7 @@ Once again I'm helping my dad (an ex-trade teacher in press tool making, fitting
 Sure there will be the usual garage sale items that makes a Second Hand Saturday fun for all community shoppers; clothes, books, home decorative items etc....But I just wanted to reinforce that there is a TOOLS ,TOOLS, TOOLS focus this time round.
 The roller door will go up at 8am on the dot! Then the fun begins...",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478768138/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25667845_2F181223926239_2F1_2Foriginal_xoudkn.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478768138/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25667845_2F181223926239_2F1_2Foriginal_xoudkn.jpg',
   start_date_time: "26 Nov 2016, 8:00 AM PST",
   end_date_time: "26 Nov 2016, 3:00 PM PST"
 })
@@ -149,7 +149,7 @@ For $10, you'll get a BBQ plate with: a chopped brisket plate with bun, cole sla
 For $10, you can purchase our 1st Dibs Picking Tickets for early shopping at the Preview Night for Friday night before our garage sale on Saturday.
 GARAGE SALE IS OPEN TO THE PUBLIC ON FRIDAY 6-8PM (WITH PREVIEW TICKET) AND SATURDAY FROM 8AM-12PM ON 11/12/16. ",
   host_id: 1,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478768301/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25295398_2F151623211589_2F1_2Foriginal_kanv0u.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478768301/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25295398_2F151623211589_2F1_2Foriginal_kanv0u.jpg',
   start_date_time: "11 Nov 2016, 10:00 AM PST",
   end_date_time: "12 Nov 2016, 12:00 PM PST"
 })
@@ -172,7 +172,7 @@ Elliott Amusements Carnival
 Friday-Sunday, June 9-11, 2017   10-5
  ",
   host_id: 1,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478768436/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25785358_2F193928113371_2F1_2Foriginal_kqwyay.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478768436/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25785358_2F193928113371_2F1_2Foriginal_kqwyay.jpg',
   start_date_time: "10 Jun 2017, 10:00 AM PST",
   end_date_time: "11 Jun 2017, 5:00 PM PST"
 })
@@ -185,7 +185,7 @@ Gift cards (available in $5 increments) purchased on this date with code “RTMC
  Bring a copy of THIS FLYER (printed or on your mobile device) with you to the event!
  ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478768591/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25194428_2F150385385035_2F1_2Foriginal_ebdoyh.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478768591/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25194428_2F150385385035_2F1_2Foriginal_ebdoyh.jpg',
   start_date_time: "30 Nov 2016, 11:00 AM PST",
   end_date_time: "30 Nov 2016, 8:00 PM PST"
 })
@@ -199,7 +199,7 @@ For $15.00 get in the doors 30 minutes early and be the first to see what our 20
 See what the local Wedding Professionals have to offer and take time to view one of our Vendor Snapshots! These themed displays give you a glimpse into what working with a local wedding professional can do to help make your big day complete! In addition, they can give you ideas on to how to use your new purchases! Our fun and interactive snapshots will include live models, cake samples, reception displays, and much more!
  ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478768779/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25346291_2F192062613647_2F1_2Foriginal_lp7ct1.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478768779/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25346291_2F192062613647_2F1_2Foriginal_lp7ct1.jpg',
   start_date_time: "21 Jan 2017, 10:00 AM PST",
   end_date_time: "21 Jan 2017, 1:00 PM PST"
 })
@@ -216,7 +216,7 @@ What is the event ticket refund policy?
 All ticket sales are final, and tickets are non-refundable. Proceeds from these events go toward the nonprofit Poudre Landmarks Foundation's mission to preserve, restore, protect, and interpret the architectural and cultural heritage of the Fort Collins area.
  ",
   host_id: 2,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478768961/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25234221_2F43286634138_2F1_2Foriginal_nq00on.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478768961/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25234221_2F43286634138_2F1_2Foriginal_nq00on.jpg',
   start_date_time: "10 Dec 2016, 10:00 AM PST",
   end_date_time: "10 Dec 2016, 12:30 PM PST"
 })
@@ -224,7 +224,7 @@ Event.create({title: "Indoor Yard Sale",
   description: "Indoor Yardsale with over 20 Vendors. Open to the public. Variety of items for all ages
  ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478769396/krylon_pinterest_2_rbwgqa.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478769396/krylon_pinterest_2_rbwgqa.jpg',
   start_date_time: "2 Dec 2016, 8:00 AM PST",
   end_date_time: "2 Dec 2016, 2:30 PM PST"
 })
@@ -244,7 +244,7 @@ The Kiwanis Club of Lower Cape Cod is a service club that raises money to help l
 
  ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478769494/garage-sale-4.1_k7ryjv.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478769494/garage-sale-4.1_k7ryjv.jpg',
   start_date_time: "26 Dec 2016, 10:00 AM PST",
   end_date_time: "26 Dec 2016, 2:30 PM PST"
 })
@@ -258,7 +258,7 @@ We all know there are children on the other side of the world that have next to 
 The truth is you really can \"BE THE CHANGE\".
 The Ripple effect that comes from just ONE childs education is AMAZING.  ",
   host_id: 1,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478769256/0_tpndwa.png',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478769256/0_tpndwa.png',
   start_date_time: "19 Nov 2016, 12:00 PM PST",
   end_date_time: "19 Dec 2016, 3:00 PM PST"
 })
@@ -272,7 +272,7 @@ Sponsorship spots available.
 Tickets available for $35 in advance. $45 at the door.
 Apply early ",
   host_id: 2,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478769902/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25421239_2F3064849815_2F1_2Foriginal_jkhn9r.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478769902/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25421239_2F3064849815_2F1_2Foriginal_jkhn9r.jpg',
   start_date_time: "11 Dec 2016, 6:00 PM PST",
   end_date_time: "11 Dec 2016, 11:00 PM PST"
 })
@@ -287,7 +287,7 @@ Decide how many wreaths you want to purchase.
 Select self-pickup (available at 2490 Pioneer Pike starting Nov. 21) or delivery(shipping orders must be placed online or mailed to the Eugene Young Life office by Dec. 10).
 Submit payment (payment may be dropped off at self-pickup location at the time of pickup, or mailed, with order form, to Eugene Young Life).",
   host_id: 2,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478770066/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25327521_2F80789415747_2F1_2Foriginal_d4hx9f.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478770066/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25327521_2F80789415747_2F1_2Foriginal_d4hx9f.jpg',
   start_date_time: "26 Oct 2016, 8:00 AM PST",
   end_date_time: "18 Dec 2016, 8:00 PM PST"
 })
@@ -298,7 +298,7 @@ Come out and join us for a relaxing evening painting your very own Snow –H-I-O
 Plan to grab a few of your closest friends for a night out to support a worthwhile cause. Hors d’oeuvres and drinks will be provided.
 ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478770198/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25256242_2F100512159255_2F1_2Foriginal_iuovyu.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478770198/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25256242_2F100512159255_2F1_2Foriginal_iuovyu.jpg',
   start_date_time: "8 Dec 2016, 5:30 AM PST",
   end_date_time: "8 Dec 2016, 8:30 PM PST"
 })
@@ -308,7 +308,7 @@ Event.create({title: "Curry FUNdraiser",
 It will be the usual Harbour merriment: good food, even better company (!) and loads of really brilliant raffle prizes... who needs Christmas shopping? We look forward to letting our hair down and celebrating the end of another year of hard, but rewarding, work with you.
 ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478769256/0_tpndwa.png',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478769256/0_tpndwa.png',
   start_date_time: "5 Dec 2016, 7:30 AM PST",
   end_date_time: "5 Dec 2016, 9:30 PM PST"
 })
@@ -320,7 +320,7 @@ Tickets will include all of the Black Hog beer, Miya's Sushi, Scratch Baking goo
 Please bring your appetites, your excitement, your dancing shoes, and your wallets (for raffle tickets)!
 ",
   host_id: 1,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478770391/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24792474_2F76044210207_2F1_2Foriginal_eyf4qf.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478770391/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24792474_2F76044210207_2F1_2Foriginal_eyf4qf.jpg',
   start_date_time: "19 Dec 2016, 6:30 AM PST",
   end_date_time: "19 Dec 2016, 9:30 PM PST"
 })
@@ -341,7 +341,7 @@ What to bring: There will be a silent auction, games and drinks to purchase. Bri
 Are children welcome: This will be a child-free event
 ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478770537/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25352074_2F188343250084_2F1_2Foriginal_qypd3m.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478770537/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25352074_2F188343250084_2F1_2Foriginal_qypd3m.jpg',
   start_date_time: "26 Nov 2016, 6:30 AM PST",
   end_date_time: "26 Nov 2016, 10:30 PM PST"
 })
@@ -352,7 +352,7 @@ Limited yoga mats will be available for use so please bring your mat with you!
 Parking willl be available onsite at the Bradfield Community Center. Overflow parking is also available across the street at the United Way.
 ",
   host_id: 2,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478770687/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25108674_2F162749709667_2F1_2Foriginal_falmzv.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478770687/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25108674_2F162749709667_2F1_2Foriginal_falmzv.jpg',
   start_date_time: "12 Dec 2016, 6:00 AM PST",
   end_date_time: "12 Dec 2016, 8:00 PM PST"
 })
@@ -387,7 +387,7 @@ No shows = No Refund
 Also last day to cancel to get your money back is May 9th.
 ",
   host_id: 3,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478771744/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24505326_2F136740680043_2F1_2Foriginal_zxilql.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478771744/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24505326_2F136740680043_2F1_2Foriginal_zxilql.jpg',
   start_date_time: "13 May 2017, 8:00 AM PST",
   end_date_time: "13 May 2017, 3:00 PM PST"
 })
@@ -404,66 +404,582 @@ New vendors are always welcome.
   For more information contact Joe @ 727-244-1341.  Or go to: www.regalrailways.com
 ",
   host_id: 1,
-  image_url: 'http://res.cloudinary.com/psia12345/image/upload/v1478771892/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24047156_2F81722665081_2F1_2Foriginal_l8rz3a.jpg',
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478771892/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24047156_2F81722665081_2F1_2Foriginal_l8rz3a.jpg',
   start_date_time: "19 Nov 2016, 9:00 AM PST",
   end_date_time: "19 Nov 2016, 2:00 PM PST"
 })
 
+Event.create({title: "Do Good, Look Great",
+  description: "A fun relaxed charity event, where amateur models will be wearing items bought from charity shops. There will be a prize draw, auction, bar, look-a-like competitions and clothes/jewellery on sale.
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478862134/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24524591_2F14027239117_2F1_2Foriginal_lijf9c.jpg',
+  start_date_time: "3 Dec 2016, 7:30 AM PST",
+  end_date_time: "3 Dec 2016, 10:30 PM PST"
+})
+Event.create({title: "FREE Admission Pass - Holiday/Toy Sale - Just Between Friends Rockford",
+  description: "HOLIDAY/TOY SALE
+Just Between Friends Kids Consignment Sales Event at Tebala Event Center, 7910 Newburg Rd, Rockford.
+
+Find bargains on Toys, Games, Puzzles, Books, Holiday Clothes, Christmas Decor and much more.
+
+Dates: Nov 11-12
+- Friday: 11/11: 9am - 8pm
+- Saturday: 11/12: 9am - 3pm (50% off sale!)
+
+Visit our website for more information. http://rockford.jbfsale.com/
+",
+  host_id: 2,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478862501/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24630817_2F136118586660_2F1_2Foriginal_y3mqyw.jpg',
+  start_date_time: "11 Nov 2016, 9:00 AM PST",
+  end_date_time: "12 Nov 2016, 3:00 PM PST"
+})
+Event.create({title: "Baby & Kids Nearly New Sales",
+  description: "Baby and Kids Nearly New Sale.  The Pemberton Centre, Rushden.  Lots of stalls to browse! Refreshments available. Entrance £1, kids free.  Lots of preloved items (Toys, Clothes etc) at a fraction of the high street cost!   To book a stall please call 07577701161 or email karen_aves@hotmail.co.uk
+",
+  host_id: 2,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478866514/https-_2F_2Fcdn.evbuc.com_2Fimages_2F18790560_2F166307634011_2F1_2Foriginal_s8gjwt.jpg',
+  start_date_time: "26 Nov 2016, 10:00 AM PST",
+  end_date_time: "26 Nov 2016, 12:00 PM PST"
+})
+Event.create({title: "Smart Works Manchester Clothing Sale",
+  description: "We're very excited to be holding our first sale this November.
+Come along and pick up some bargains from a huge selection of ladies clothing from high street to high end.
+We'll also be selling accessories and beauty products which will make great stocking fillers at Christmas. There will also be a raffle so lots on offer.
+All proceeds go towards Smart Works Manchester - help us to continue providing support to women across Greater Manchester by coming along to our sale.
+All the money raised will go back into the charity to help us continue our hard work.
+This is one event you do not want to miss!
+",
+  host_id: 2,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478866667/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24529500_2F179095819041_2F1_2Foriginal_btkpyp.jpg',
+  start_date_time: "12 Nov 2016, 10:00 AM PST",
+  end_date_time: "12 Nov 2016, 4:00 PM PST"
+})
+Event.create({title: "Joules Clothing Sales Event!",
+  description: "A massive Joules Clothing Sale at Ludlow Racecourse in Shropshire, to rasie funds for Wistanstow Under 5's nursery.
+
+",
+  host_id: 2,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478866775/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24639940_2F186921753779_2F1_2Foriginal_hyz4dr.jpg',
+  start_date_time: "16 Feb 2017, 6:00 PM PST",
+  end_date_time: "16 Feb 2017, 10:00 PM PST"
+})
+Event.create({title: "Fia's Fill A BAG for $25.00 Basement Sale ",
+  description: "New Timeframe - 12:20 pm to 7:20pm.
+Fia's Fabulous Finds brings to you a FABULOUS shopping experience for the vintage, second-hand thrifters and clothing repurposers! The Fill A Bag in Fia's Basement Sale offers shoppers an opportunity to uncover clothing and shoe treasures in the basement of Fia's where brands from Theory, Banana Republic, BCBG, Nanette Leppore, Gap, Ann Taylor and much, much more can be found. Grab your bag (provided by Fia) enter the basement and let the treasure hunt begin! You can fill the BAG for $25.00 VIP Basement Sale from 12pm-7:00pm. Beat the crowds and be the first to grab the best basement treasures.
+",
+  host_id: 2,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478866881/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25331805_2F44808208117_2F1_2Foriginal_i09fus.jpg',
+  start_date_time: "11 Nov 2017, 12:00 PM PST",
+  end_date_time: "11 Nov 2017, 7:00 PM PST"
+})
+Event.create({title: "Book Sale ",
+  description:" Join the Friends of Your Home Public Library on Saturday November 19 from 9am to 1pm for our monthly book sale. Adult hardcover books are .50 and children’s and paperbacks are only .25. We hope to see you there!
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478867172/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25704958_2F142452926816_2F1_2Foriginal_vvcnfk.jpg',
+  start_date_time: "19 Nov 2016, 9:00 AM PST",
+  end_date_time: "19 Nov 2016, 1:00 PM PST"
+})
+Event.create({title: "Moving Sale ",
+  description: "Moving Sale!!!! Majority of furniture and contents of apartment will be up for sale. Prices are negotiable. Please come prepared to collect purchased items on date of sale.
+Example of items:
+- Matching leather sofas
+- Wooden table set
+- Kitchen appliances and utensils
+- Lamps, Vacuum cleaner, Side tables
+- and many more!!!!!
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478867600/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25812969_2F194026332123_2F1_2Foriginal_toumdn.jpg',
+  start_date_time: "Sat, November 12, 2016 12:30 PM PST",
+  end_date_time: "Sat, November 12, 2016 7:30 PM PST"
+})
+Event.create({title: "Torrance Antique Street Faire ",
+  description:"200+ Sellers with Antiques, Furniture, Plants, Toys, LP's, Tools, Vintage Clothes, Jewelry, Home Decor & More...all on sale at bargain prices!
+Antique Appraisal Booth - Only $3.00 per item!
+Karren's Krafts 4 Kids - FREE holiday crafting activity!
+Live Music
+Lots of great restaurants, bakery & sports bars!
+Pet Friendly, Free Admission
+For information call 310-328-6107
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478867602/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25701140_2F22187136342_2F1_2Foriginal_r4m2no.jpg',
+  start_date_time: "27 Nov 2016, 8:00 AM PST",
+  end_date_time: "27 Nov 2016, 3:00 PM PST"
+})
+Event.create({title: "Wholly Craft: Christmas Craft and Gift Fair ",
+  description: "A wonderful opportunity to do some Christmas shopping for gifts and crafted goods created by local makers and support a good cause.  Beautiful Christmas cards and decorations, framed pictures, toys, cushions, stocking fillers and a lovely range of upcycled furniture on sale. Tea, coffee, home baking available. Gift wrapping service on site.  Pop in for a visit!
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478867785/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25833027_2F194107434896_2F1_2Foriginal_kg5yqh.jpg',
+  start_date_time: "Sat 26 November 2016 10:00 AM PST",
+  end_date_time: "Sat 26 November 2016 2:00 PM PST"
+})
+Event.create({title: "Indoor Moving Sale",
+  description: "Several items for sale... several baby clothes for sale sizes 2T and UNDER. Microwave, dining set, bathroom set, kids toys, woman's clothes, decor and more....EVERY THING MUST GO
+
+Official Moving Sale Date will be - November 19th.",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478867960/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25755660_2F24920838235_2F1_2Foriginal_ji3smn.jpg',
+  start_date_time: "19 November 2016 8:00 AM PST",
+  end_date_time: "19 November 2016 4:00 PM PST"
+})
+Event.create({title: "Second-Hand Book Sale",
+  description: "Stock up your home library with some second-hand book bargains! Nothing over $2.
+Darebin Libraries uses Eventbrite for all event bookings. When booking with Eventbrite individuals will be required to provide their name and contact details. Eventbrite’s privacy policy can be found at the Privacy link located at the bottom of this page.
+Individuals may choose to book directly with Darebin Libraries by contacting the library on 1300 655 355.
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478868146/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25297397_2F29101596107_2F1_2Foriginal_yra1kn.jpg',
+  start_date_time: "3 December 2016 10:00 AM PST",
+  end_date_time: "3 December 2016 1:00 PM PST"
+})
+Event.create({title: "Wrapped Up in the Holidays Craft Fair",
+  description: "Join us for an afternoon of shopping! Visit our vendors who will be selling your favorite products like thirtyone, lipsense, scentsy and more. We will also have various crafts and decor for sale. Our front studio will also be selling gently used dance clothes, shoes, and accessories.
+
+This event is open to the public and we are actively seeking vendors. If interested in a vendor table, please contact Jennifer@NBTdance.com
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478868532/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25488270_2F144855901713_2F1_2Foriginal_jjpa9m.jpg',
+  start_date_time: "20 December 2016 1:00 PM PST",
+  end_date_time: "20 December 2016 3:00 PM PST"
+})
+Event.create({title: "1st Annual Pop-Up Shop",
+  description: "Hello everyone! It’s that time of year to SHOP,SHOP, SHOP! Come out and enjoy some FREE BEER AND WINE with us and get an early start on your holiday shopping. There will be a plethora of products available for sale! We will have hors d’oeuvre’s, swag bags, raffles and MUCH MUCH MORE!!! Vendors will be on site will an array of products for sale. Some include,Handmade Crochet Items, Bling T-Shirts, One Of A Kind Boutique Clothing, Perfume and Cologne, Novelty and Designer Handbags, Adult Toys, Alcohol Infused Treats, African/ Dashiki Clothing, Beautiful Jewelry, Candles, Lingerie and MUCH MUCH MORE!!
+For Vendor Inquiry Please email Tina @ Tejayw67@gmail.com
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478868662/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25328433_2F170827643134_2F1_2Foriginal_huyknv.jpg',
+  start_date_time: "20 December 2016 8:00 AM PST",
+  end_date_time: "20 December 2016 12:00 PM PST"
+})
+Event.create({title: "Designer Pop Up X-Mas Sale (50% - 70& OFF!)",
+  description: "Gear Relapse Presents a 3 day only designer pop up sale. Shop for designer clothes at 50% - 70% OFF. Handbags, shoes, designer dresses, brands like Gucci, YSL, Ralph Lauren, Michael Kors, 7 For All Mankind and more.
+",
+  host_id: 3,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478868740/https-_2F_2Fcdn.evbuc.com_2Fimages_2F25685286_2F193571940492_2F1_2Foriginal_e0mlrl.jpg',
+  start_date_time: "16 December 2016 10:00 AM PST",
+  end_date_time: "18 December 2016 8:00 PM PST"
+})
+Event.create({title: "Preloved Theads Women's Consignment Sale",
+  description: "Shop for new and gently loved women's clothing, shoes, jewelry, accessories and more for up to 90% off retail prices! Over 80 consignors will be selling their items during this five day event - the Preloved Threads Women's Consignment Sale. Come shop to refresh your wardrobe or snag a few winter items at a great price and/or sign up to consign your items and earn 60-70% on the sales. Donated items at the end of the sale go to benefit the St. Francis House in Puyallup. Learn more about the sale or sign up to consign at www.prelovedthreads.com.
+
+",
+  host_id: 2,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478868914/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24260255_2F144342576414_2F1_2Foriginal_swh9va.jpg',
+  start_date_time: "24 December 2016 8:00 AM PST",
+  end_date_time: "31 December 2016 8:00 PM PST"
+})
+Event.create({title: "Miss Tina's Christmas Craft Fair",
+  description: "Local crafters are welcome to come along to showcase their items.  The event is free for buyers.
+PLEASE NO: avon, forever living, etc. - if you are unsure please call the shop first to check on 01914475010.  Also, no food/cake sales.
+Space is allocated per table - if you would like a clothes rail you MUST purchase an additional table.
+
+",
+  host_id: 2,
+  image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478869013/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24041771_2F84053293070_2F1_2Foriginal_otvlao.jpg',
+  start_date_time: "10 December 2016 10:00 AM PST",
+  end_date_time: "10 December 2016 4:00 PM PST"
+})
+# Event.create({title: "Miss Tina's Christmas Craft Fair",
+#   description: "Local crafters are welcome to come along to showcase their items.  The event is free for buyers.
+# PLEASE NO: avon, forever living, etc. - if you are unsure please call the shop first to check on 01914475010.  Also, no food/cake sales.
+# Space is allocated per table - if you would like a clothes rail you MUST purchase an additional table.
+#
+# "
+#   host_id: 2,
+#   image_url: 'https://res.cloudinary.com/psia12345/image/upload/v1478869013/https-_2F_2Fcdn.evbuc.com_2Fimages_2F24041771_2F84053293070_2F1_2Foriginal_otvlao.jpg',
+#   start_date_time: "10 December 2016 10:00 AM PST",
+#   end_date_time: "10 December 2016 4:00 PM PST"
+# })
+#
+
 #Category
 Category.create({
-  name: 'Books'
+  name: 'Books' #1
 })
 Category.create({
-  name: 'Electronic'
+  name: 'Furniture'#2
 })
 Category.create({
-  name: 'Furniture'
+  name: 'Clothing' #3
 })
 Category.create({
-  name: 'Clothing'
+  name: 'Food' #4
 })
 Category.create({
-  name: 'Food'
+  name: 'Toys' #5
+})
+Category.create({
+  name: 'Music' #6
+})
+Category.create({
+  name: 'Jewlery & Accessories' #7
+})
+Category.create({
+  name: 'Dishware' #8
+})
+Category.create({
+  name: 'Arts & Crafts' #9
+})
+Category.create({
+  name: 'Others' #10
 })
 
 #CategoryEventJoinTable
-# CategoryEventJoinTable.create({
-#   event_id: 1,
-#   category_id: 1
-# })
-# CategoryEventJoinTable.create({
-#   event_id: 1,
-#   category_id: 2
-# })
-# CategoryEventJoinTable.create({
-#   event_id: 2,
-#   category_id: 2
-# })
-# CategoryEventJoinTable.create({
-#   event_id: 2,
-#   category_id: 1
-# })
-# CategoryEventJoinTable.create({
-#   event_id: 2,
-#   category_id: 3
-# })
+CategoryEventJoinTable.create({
+  event_id: 1,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 1,
+  category_id: 1
+})
+CategoryEventJoinTable.create({
+  event_id: 1,
+  category_id: 2
+})
+CategoryEventJoinTable.create({
+  event_id: 1,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 2,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 2,
+  category_id: 7
+})
+CategoryEventJoinTable.create({
+  event_id: 3,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 3,
+  category_id: 7
+})
+CategoryEventJoinTable.create({
+  event_id: 3,
+  category_id: 9
+})
+CategoryEventJoinTable.create({
+  event_id: 4,
+  category_id: 2
+})
+CategoryEventJoinTable.create({
+  event_id: 4,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 4,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 5,
+  category_id: 8
+})
+CategoryEventJoinTable.create({
+  event_id: 5,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 6,
+  category_id: 2
+})
+CategoryEventJoinTable.create({
+  event_id: 6,
+  category_id: 8
+})
+CategoryEventJoinTable.create({
+  event_id: 6,
+  category_id: 6
+})
+CategoryEventJoinTable.create({
+  event_id: 6,
+  category_id: 1
+})
+CategoryEventJoinTable.create({
+  event_id: 6,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 6,
+  category_id: 5
+})
+CategoryEventJoinTable.create({
+  event_id: 7,
+  category_id: 7
+})
+CategoryEventJoinTable.create({
+  event_id: 7,
+  category_id: 2
+})
+CategoryEventJoinTable.create({
+  event_id: 7,
+  category_id: 8
+})
+CategoryEventJoinTable.create({
+  event_id: 7,
+  category_id: 10
+})
 #
-# CategoryEventJoinTable.create({
-#   event_id: 1,
-#   category_id: 1
-# })
-# CategoryEventJoinTable.create({
-#   event_id: 1,
-#   category_id: 2
-# })
-# CategoryEventJoinTable.create({
-#   event_id: 2,
-#   category_id: 2
-# })
-# CategoryEventJoinTable.create({
-#   event_id: 2,
-#   category_id: 1
-# })
+CategoryEventJoinTable.create({
+  event_id: 7,
+  category_id: 1
+})
+CategoryEventJoinTable.create({
+  event_id: 7,
+  category_id: 6
+})
+CategoryEventJoinTable.create({
+  event_id: 8,
+  category_id: 10
+})
+#
+CategoryEventJoinTable.create({
+  event_id: 9,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 9,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 10,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 10,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 10,
+  category_id: 2
+})
+CategoryEventJoinTable.create({
+  event_id: 10,
+  category_id: 5
+})
+#
+CategoryEventJoinTable.create({
+  event_id: 11,
+  category_id: 4
+})
+#
+CategoryEventJoinTable.create({
+  event_id: 12,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 13,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 14,
+  category_id: 1
+})
+CategoryEventJoinTable.create({
+  event_id: 14,
+  category_id: 2
+})
+CategoryEventJoinTable.create({
+  event_id: 14,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 14,
+  category_id: 5
+})
+CategoryEventJoinTable.create({
+  event_id: 14,
+  category_id: 9
+})
+CategoryEventJoinTable.create({
+  event_id: 14,
+  category_id: 8
+})
+#
+CategoryEventJoinTable.create({
+  event_id: 15,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 15,
+  category_id: 1
+})
+CategoryEventJoinTable.create({
+  event_id: 15,
+  category_id: 5
+})
+CategoryEventJoinTable.create({
+  event_id: 16,
+  category_id: 6
+})
+CategoryEventJoinTable.create({
+  event_id: 17,
+  category_id: 5
+})
+CategoryEventJoinTable.create({
+  event_id: 17,
+  category_id: 6
+})
+CategoryEventJoinTable.create({
+  event_id: 17,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 17,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 17,
+  category_id: 7
+})
+CategoryEventJoinTable.create({
+  event_id: 18,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 19,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 19,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 19,
+  category_id: 9
+})
+CategoryEventJoinTable.create({
+  event_id: 20,
+  category_id: 7
+})
+CategoryEventJoinTable.create({
+  event_id: 20,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 21,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 21,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 22,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 22,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 23,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 24,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 24,
+  category_id: 9
+})
+CategoryEventJoinTable.create({
+  event_id: 25,
+  category_id: 5
+})
+CategoryEventJoinTable.create({
+  event_id: 25,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 26,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 26,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 27,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 27,
+  category_id: 1
+})
+CategoryEventJoinTable.create({
+  event_id: 27,
+  category_id: 9
+})
+CategoryEventJoinTable.create({
+  event_id: 27,
+  category_id: 5
+})
+CategoryEventJoinTable.create({
+  event_id: 28,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 28,
+  category_id: 4
+})
+CategoryEventJoinTable.create({
+  event_id: 28,
+  category_id: 5
+})
+CategoryEventJoinTable.create({
+  event_id: 28,
+  category_id: 2
+})
+CategoryEventJoinTable.create({
+  event_id: 29,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 30,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 31,
+  category_id: 3
+})
+CategoryEventJoinTable.create({
+  event_id: 32,
+  category_id: 1
+})
+CategoryEventJoinTable.create({
+  event_id: 33,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 33,
+  category_id: 2
+})
+#
+CategoryEventJoinTable.create({
+  event_id: 33,
+  category_id: 8
+})
+CategoryEventJoinTable.create({
+  event_id: 34,
+  category_id: 10
+})
+CategoryEventJoinTable.create({
+  event_id: 34,
+  category_id: 2
+})
+#
+CategoryEventJoinTable.create({
+  event_id: 34,
+  category_id: 8
+})
 #
 # #event_attendee_join_tables
 # EventAttendeeJoinTable.create({

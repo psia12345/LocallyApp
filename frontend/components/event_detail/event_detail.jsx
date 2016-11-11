@@ -53,21 +53,25 @@ class EventDetail extends React.Component {
 
   checkForAttendingUser(){
     let attendee_ids;
-    if (typeof this.props.event.attendees !== 'undefined'){
-      attendee_ids = this.props.event.attendees.map((attendee) => attendee.id)
-    }
-    if (typeof attendee_ids !== 'undefined' && attendee_ids.includes(this.props.currentUser.id)){
-      return (true)
+    if (this.props.currentUser !== null){
+      if (typeof this.props.event.attendees !== 'undefined'){
+        attendee_ids = this.props.event.attendees.map((attendee) => attendee.id)
+      }
+      if (typeof attendee_ids !== 'undefined' && attendee_ids.includes(this.props.currentUser.id)){
+        return (true)
+      }
     }
   }
 
   checkForInterestedUser(){
     let interested_ids;
-    if (typeof this.props.event.interested !== 'undefined'){
-      interested_ids = this.props.event.interested.map((interested_user) => interested_user.id)
-    }
-    if (typeof interested_ids !== 'undefined' && interested_ids.includes(this.props.currentUser.id)){
-      return (true)
+    if (this.props.currentUser !== null){
+      if (typeof this.props.event.interested !== 'undefined'){
+        interested_ids = this.props.event.interested.map((interested_user) => interested_user.id)
+      }
+      if (typeof interested_ids !== 'undefined' && interested_ids.includes(this.props.currentUser.id)){
+        return (true)
+      }
     }
   }
 
@@ -136,16 +140,16 @@ class EventDetail extends React.Component {
 
     return(
       <section className="event-details">
-        { this.checkForAttendingUser() ? (<h3>You're going to this event! <Link to={`users/${currentUser.id}`}>View your Upcoming Events.</Link></h3>) : (<div></div>)}
+        { this.checkForAttendingUser() ? (<h3>You are going to this event! <Link to={`users/${currentUser.id}`}>View your Upcoming Events.</Link></h3>) : (<div></div>)}
         <div className="event-header">
             <img src={event.image_url} />
           <div className="right-element">
             <p className="date">{event.start_date}</p>
             <h2>{event.title}</h2>
             <p>by {event.email}</p>
+            {this.displaybuttons()}
           </div>
         </div>
-        {this.displaybuttons()}
         <div className="main-content">
           <div className="event-main">
             <p className="section-header">DESCRIPTION</p>

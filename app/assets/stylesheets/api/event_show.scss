@@ -1,7 +1,6 @@
 .event-details{
   width: 75%;
   margin: 20px auto;
-  border: 1px solid #dddddd;
   h3{
     border: 1px solid yellow;
     background-color: lightyellow;
@@ -15,19 +14,26 @@
 }
 .event-header{
   display: flex;
-  border-bottom: 1px solid #dddddd;
   flex-wrap: wrap;
+  justify-content: center;
   img{
     height: 300px;
-    min-width: 400px;
+    width: 400px;
+    margin-right: 20px;
   }
   .right-element{
-    margin: 10px;
+    width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
     p{
-      margin-bottom: 20px;
+      margin: 20px;
+      margin-top: 40px;
+      font-size: 18px;
     }
     h2{
-      font-size: 25px;
+      font-size: 30px;
+      margin: 20px;
     }
   }
 }
