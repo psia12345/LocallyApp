@@ -10,15 +10,15 @@ Locally is a full-stack web application inspired by Eventbrite.  It utilizes Rub
 
 ### Event Rendering/Editing
 
+  The events information are stored in one table on datebase side, which contains column for `id`, `title`, `description`, `host_id`, `image_url`, `start_date_time`, `end_date_time`,  `created_at`, `updated_at`. The visitors to this site is able to view information for all available events and categorize by category. Upon login, users are able to bookmark the events and register for the event.
+
+  The information for
+
   On the database side, the notes are stored in one table in the database, which contains columns for `id`, `user_id`, `content`, and `updated_at`.  Upon login, an API call is made to the database which joins the user table and the note table on `user_id` and filters by the current user's `id`.  These notes are held in the `NoteStore` until the user's session is destroyed.  
 
   Notes are rendered in two different components: the `CondensedNote` components, which show the title and first few words of the note content, and the `ExpandedNote` components, which are editable and show all note text.  The `NoteIndex` renders all of the `CondensedNote`s as subcomponents, as well as one `ExpandedNote` component, which renders based on `NoteStore.selectedNote()`. The UI of the `NoteIndex` is taken directly from Evernote for a professional, clean look:  
 
-![image of notebook index](wireframes/home-logged-in.png)
-
-Note editing is implemented using the Quill.js library, allowing for a Word-processor-like user experience.
-
-### Notebooks
+### Events
 
 Implementing Notebooks started with a notebook table in the database.  The `Notebook` table contains two columns: `title` and `id`.  Additionally, a `notebook_id` column was added to the `Note` table.  
 
@@ -35,7 +35,7 @@ render: function () {
 }
 ```
 
-### Tags
+### Category
 
 As with notebooks, tags are stored in the database through a `tag` table and a join table.  The `tag` table contains the columns `id` and `tag_name`.  The `tagged_notes` table is the associated join table, which contains three columns: `id`, `tag_id`, and `note_id`.  
 
@@ -45,12 +45,12 @@ Tags are maintained on the frontend in the `TagStore`.  Because creating, editin
 
 ## Future Directions for the Project
 
-In addition to the features already implemented, I plan to continue work on this project.  The next steps for FresherNote are outlined below.
+In addition to the features already implemented, I plan to continue work on this project.  The next steps for Locally are outlined below.
 
 ### Search
 
-Searching notes is a standard feature of Evernote.  I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks.  This search will look go through tags, note titles, notebook titles, and note content.  
+Searching notes is a standard feature of Eventbrite. This search will look go through categories, event titles, and event content.
 
-### Direct Messaging
+### Map Integration
 
-Although this is less essential functionality, I also plan to implement messaging between FresherNote users.  To do this, I will use WebRTC so that notifications of messages happens seamlessly.  
+Map Integration is also another standard feature of Eventbrite. This feature will allow users to filter events based on location and distance in addition to other search parameters.

@@ -79,7 +79,7 @@ const Root = ({store}) => {
           <Route path="/new_event" component={EventFormContainer} onEnter={_ensureLoginUser}/>
           <Route path="/events/:id/update" component={EventFormContainer} onEnter={fetchEvent}/>
           <Route path="/users/:id" component={UserContainer} onEnter={getUser} />
-          <Route path="/api/categories/:id" component={CategoryContainer} onEnter={categoryEvent}/>
+          <Route path="/api/categories/:id/:name" component={CategoryContainer} onEnter={categoryEvent} />
         </Route>
       </Router>
     </Provider>

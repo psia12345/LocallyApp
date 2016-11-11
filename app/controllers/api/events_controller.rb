@@ -43,6 +43,7 @@ class Api::EventsController < ApplicationController
     else
       render json: @event.errors.full_messages, status: 422
     end
+    render :index
   end
 
   def remove_attendee

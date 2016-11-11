@@ -5,7 +5,7 @@ import { GET_EVENT, receiveErrors,
          receiveEvent, removeEvent,
          receiveEvents, GET_EVENTS, UPDATE_EVENT,
          CREATE_EVENT, DELETE_EVENT, ADD_ATTENDEE,
-         REMOVE_ATTENDEE, ADD_INTERESTED, REMOVE_INTERESTED, getEvent
+         REMOVE_ATTENDEE, ADD_INTERESTED, REMOVE_INTERESTED, getEvent, getEvents
       } from '../actions/event_actions';
 import { FILTER_BY_CATEGORY } from '../actions/category_actions';
 import { filter } from '../util/category_api_utils';
@@ -24,6 +24,7 @@ export default ({getState, dispatch}) => next => action => {
   }
   const successAddAttendeeCallback = event => dispatch(getEvent(event.id));
   const successCategoryFilterCallback = events => dispatch(receiveEvents(events.events));
+  const successAfterDeleteCallback = () => dispatch(getEvents())
 
   switch(action.type){
     case GET_EVENT:
@@ -39,7 +40,7 @@ export default ({getState, dispatch}) => next => action => {
       create(action.event, successEventCallback, errorCallback);
       return next(action);
     case DELETE_EVENT:
-      remove(action.id, successEventsCallback, errorCallback);
+      remove(action.id, successAfterDeleteCallback, errorCallback);
       return next(action);
     case ADD_ATTENDEE:
       attending(action.ids, successAddAttendeeCallback, errorCallback);

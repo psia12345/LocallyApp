@@ -1,16 +1,28 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Modal from 'react-modal';
+import ModalStyle from '../header/modal_style';
+import SessionFormContainer from '../session_form/session_form_container';
 
 class EventDetail extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      modalOpen: false
+    };
     this.navigateToEventListing = this.navigateToEventListing.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.onModalClose = this.onModalClose.bind(this);
   }
   componentDidMount(){
     const eventId = this.props.params.id
     this.props.getEvent(eventId);
+  }
+
+  onModalClose(){
+    this.props.clearError();
+    this.setState({modalOpen: false})
   }
 
   showUpdateDelete(){
@@ -72,11 +84,16 @@ class EventDetail extends React.Component {
       if (typeof interested_ids !== 'undefined' && interested_ids.includes(this.props.currentUser.id)){
         return (true)
       }
-    }
+    }else {return (false)}
   }
 
   handleInterestedClick(){
     e.preventDefault();
+    if (this.props.currentUser === null){
+      this.setState({
+        modalOpen: true
+      })
+    }
     this.checkForAttendingUser();
     this.props.router.push(`/events/${this.props.event.id}/register`)
   }
@@ -87,6 +104,23 @@ class EventDetail extends React.Component {
       this.props.removeAttendee(this.props.event.id);
     } else {
       this.props.removeInterested(this.props.event.id)
+    }
+  }
+
+  displayInterestButton(){
+    if (!this.checkForInterestedUser()){
+      <div className="event-buttons">
+        <button className="interested" onClick={this.handleClick}
+          value="Interested">
+          <div className="bookmark"></div>Interested</button>
+      <Modal
+        isOpen={this.state.modalOpen}
+        onRequestClose={this.onModalClose}
+        style={ModalStyle}>
+        <SessionFormContainer close={this.onModalClose} action={this.state.signIn} loginlink={<Link id="login"
+          onClick={this.handleClick.bind(this, "Login") }>LOG IN</Link>}/>
+      </Modal>
+    </div>
     }
   }
 
@@ -147,6 +181,8 @@ class EventDetail extends React.Component {
             <p className="date">{event.start_date}</p>
             <h2>{event.title}</h2>
             <p>by {event.email}</p>
+            <div className="testing Modal">{this.displayInterestButton()}</div>
+
             {this.displaybuttons()}
           </div>
         </div>
