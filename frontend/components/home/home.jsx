@@ -10,7 +10,6 @@ class Home extends React.Component{
   handleClick(e){
     e.preventDefault();
     const id = e.currentTarget.name;
-    this.props.filterByCategory(id);
     this.props.router.push(`/api/categories/${id}`)
   }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import {getEvents, getEvent } from '../actions/event_actions';
 import {fetchUser} from '../actions/session_actions';
+import {filterByCategory} from '../actions/category_actions';
 // react router
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
@@ -40,6 +41,11 @@ const Root = ({store}) => {
   const getUser = (nextState) => {
     store.dispatch(fetchUser(nextState.params.id));
   }
+
+  const categoryEvent = (nextState) => {
+    store.dispatch(filterByCategory(nextState.params.id));
+  }
+
   // const checkUserId = (nextState, ) => {
   //   if(store.getState().eventShow.host_id === currentUser.id){
   //     replace(`/events/${eventShow.id}`);
@@ -73,7 +79,7 @@ const Root = ({store}) => {
           <Route path="/new_event" component={EventFormContainer} onEnter={_ensureLoginUser}/>
           <Route path="/events/:id/update" component={EventFormContainer} onEnter={fetchEvent}/>
           <Route path="/users/:id" component={UserContainer} onEnter={getUser} />
-          <Route path="/api/categories/:id" component={CategoryContainer}/>
+          <Route path="/api/categories/:id" component={CategoryContainer} onEnter={categoryEvent}/>
         </Route>
       </Router>
     </Provider>
