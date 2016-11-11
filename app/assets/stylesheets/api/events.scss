@@ -33,11 +33,14 @@
 .single-event{
   display: flex;
   background-color: white;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
   img {
     width: 200px;
     height: 100px;
     display: block;
+    border-radius: 10px;
   }
 }
 .event-info{
@@ -45,10 +48,12 @@
   span{
     margin-top: 10px;
     margin-left: 10px;
+    padding: 10px;
   }
   h2{
     margin-top: 10px;
     margin-left: 10px;
+    padding: 10px;
   }
 }
 .sidebar{

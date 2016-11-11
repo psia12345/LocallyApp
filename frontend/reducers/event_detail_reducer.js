@@ -22,10 +22,10 @@ const EventDetailReducer = (oldstate = defaultEventDetailState, action) => {
   switch(action.type){
     case RECEIVE_EVENT:
       const start_date = dateFormat(action.event.start_date_time, "dddd, mmmm dS, yyyy");
-      const start_time = dateFormat(action.event.start_date_time, "h:MM TT");
-      const end_date = dateFormat(action.event.end_date_time, "dddd, mmmm dS, yyyy");
-      const end_time = dateFormat(action.event.end_date_time, "h:MM TT");
-
+      let start_time = new Date(action.event.start_date_time);
+      start_time = start_time.toLocaleTimeString();
+      const end_date = dateFormat(action.event.end_time, "dddd, mmmm dS, yyyy");
+      const end_time = new Date(action.event.end_date_time).toLocaleTimeString();
       const requestedEvent = action.event;
       const newState = merge({}, action.event, {start_time, start_date, end_time, end_date});
 

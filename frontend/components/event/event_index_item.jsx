@@ -6,7 +6,7 @@ const EventIndexItem = ({event}) =>(
     <img src={event.image_url} className="event-image-icon"/>
     <div className="event-info">
       <h2>{event.title}</h2>
-      <span>{dateFormat(event.start_date, "dddd, mmmm dS, yyyy")}</span>
+      <span>{dateFormat(event.start_date_time, "dddd, mmmm dS, yyyy")}</span>
     </div>
   </div>
 )

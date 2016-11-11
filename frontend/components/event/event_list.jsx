@@ -7,7 +7,6 @@ const EventList = (props) => (
     <div className="extra clearfix"></div>
 
     <div className="main-content">
-      <Sidebar />
       <section className="event-list-section">
         <div className="description clearfix">
           <h2>Displaying All Events For You</h2>

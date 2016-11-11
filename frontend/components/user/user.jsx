@@ -94,7 +94,7 @@ class User extends React.Component{
         <div className='user-specific-events'>
           { this.renderDisplayInfo() }
         </div>
-        <button onClick={this.redirectToEvents}>Discover Events</button>
+        <button onClick={this.redirectToEvents} className="all-events">Discover More Events</button>
       </div>
     )
   }
