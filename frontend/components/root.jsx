@@ -11,10 +11,11 @@ import SessionFormContainer from './session_form/session_form_container';
 import EventListContainer from './event/event_list_container';
 import EventFormContainer from './event/event_form_container';
 import EventDetailContainer from './event_detail/event_detail_container';
-import Home from './home/home';
+import HomeContainer from './home/home_container';
 import UserContainer from './user/user_container';
 import EventRegistrationFormContainer from './event_registration/event_registration_container';
 import RegistrationSuccessContainer from './registration_success/registration_success_container';
+import CategoryContainer from './categories/category_search_container';
 
 const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -57,7 +58,7 @@ const Root = ({store}) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} >
-          <IndexRoute component={Home}/>
+          <IndexRoute component={HomeContainer}/>
           <Route path="/login" component={SessionFormContainer}
                  onEnter={_redirectIfLoggedIn}/>
           <Route path="/signup" component={SessionFormContainer}
@@ -72,6 +73,7 @@ const Root = ({store}) => {
           <Route path="/new_event" component={EventFormContainer} onEnter={_ensureLoginUser}/>
           <Route path="/events/:id/update" component={EventFormContainer} onEnter={fetchEvent}/>
           <Route path="/users/:id" component={UserContainer} onEnter={getUser} />
+          <Route path="/categories/:id" component={CategoryContainer}/>
         </Route>
       </Router>
     </Provider>

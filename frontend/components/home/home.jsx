@@ -1,22 +1,33 @@
 import React from 'react';
+import {Link, withRouter} from 'react-router';
 
 class Home extends React.Component{
   constructor(props){
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
+
   handleClick(e){
     e.preventDefault();
-    debugger;
+    const id = e.currentTarget.name;
+    this.props.filterByCategory(id);
+    this.props.router.push(`/categories/${id}`)
   }
+
+
+
+
   render(){
     return (
       <div>
         <h3>Browse by Top Categories</h3>
         <div className="category-browse">
           <div className="row1">
-            <div className="category-mini" style={{backgroundImage: 'url( http://res.cloudinary.com/psia12345/image/upload/c_scale,w_700/v1478499010/photo-1445205170230-053b83016050_ujlcre.jpg)'}} value="clothing" onClick={this.handleClick}>
+            <Link to='/api/categories/4'
+              name="4" className="category-mini"
+              style={{backgroundImage: 'url( http://res.cloudinary.com/psia12345/image/upload/c_scale,w_700/v1478499010/photo-1445205170230-053b83016050_ujlcre.jpg)'}} value="clothing" onClick={this.handleClick}>
               <h4>Clothing</h4>
-            </div>
+            </Link>
             <div className="category-long" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/v1478501661/No-Stuffed-Animals-for-Christmas_iklo1n.jpg)'}}>
               <h4>Toys</h4>
             </div>
@@ -46,7 +57,7 @@ class Home extends React.Component{
   }
 }
 
-export default Home;
+export default withRouter(Home);
 
 
 

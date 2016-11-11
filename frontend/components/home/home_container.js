@@ -1,12 +1,10 @@
 import Home from './home';
 import {connect} from 'react-redux';
+import {filterByCategory} from '../../actions/category_actions';
 
-const mapStateToProps = ({categories}) => ({
 
+const mapDispatchToProps = dispatch => ({
+  filterByCategory: (id) => dispatch(filterByCategory(id))
 })
 
-const mapDispatchToProps = () => {
-
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(null, mapDispatchToProps)(Home);

@@ -7,6 +7,9 @@ import { GET_EVENT, receiveErrors,
          CREATE_EVENT, DELETE_EVENT, ADD_ATTENDEE,
          REMOVE_ATTENDEE, ADD_INTERESTED, REMOVE_INTERESTED, getEvent
       } from '../actions/event_actions';
+import { FILTER_BY_CATEGORY } from '../actions/category_actions';
+import { filter } from '../util/category_api_utils';
+
 
 import {hashHistory} from 'react-router';
 
@@ -20,6 +23,7 @@ export default ({getState, dispatch}) => next => action => {
     hashHistory.push(`/events/${event.id}`)
   }
   const successAddAttendeeCallback = event => dispatch(getEvent(event.id));
+  const successCategoryFilterCallback = events => dispatch(receiveEvents(events.events));
 
   switch(action.type){
     case GET_EVENT:
@@ -48,6 +52,9 @@ export default ({getState, dispatch}) => next => action => {
       return next(action);
     case REMOVE_INTERESTED:
       cancelSave(action.id, successAddAttendeeCallback, errorCallback);
+      return next(action);
+    case FILTER_BY_CATEGORY:
+      filter(action.id, successCategoryFilterCallback, errorCallback);
       return next(action);
     default:
       return next(action);
