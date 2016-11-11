@@ -1,10 +1,11 @@
 import CategorySearch from './category_search';
 import {connect } from 'react-redux';
 
-const mapStateToProps = ({events}, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
+  const name = ownProps.params.name;
   return({
-    events: events,
-    catgory: ownProps.params.name
+    events: state.events,
+    catgory: name
   })
 }
 

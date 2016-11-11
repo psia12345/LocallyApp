@@ -2,9 +2,10 @@ import React from 'react';
 import EventIndexItem from '../event/event_index_item';
 import {Link } from 'react-router';
 
-const CategorySearch = ({events, category}) => {
-  const allEvents = events
-  const categoryName = category
+const CategorySearch = (props) => {
+  const allEvents = props.events
+  debugger;
+  const category = props.category
   return(
   <div className="category-filtered">
     <h1>Showing Events for you!</h1>
