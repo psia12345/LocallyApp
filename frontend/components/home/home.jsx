@@ -10,10 +10,9 @@ class Home extends React.Component{
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.settings = {
-      dots: true,
       autoplay: true,
       infinite: true,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1
     };
@@ -24,15 +23,21 @@ class Home extends React.Component{
     const id = e.currentTarget.name;
     this.props.router.push(`api/categories/${id}/${CATEGORY[id]}`)
   }
-  
+
   render(){
     return (
-      <div>
+      <div className="splash-page-main-content">
         <Slider {...this.settings}>
           <div className="image-slideshow clearfix" style={{backgroundImage:  'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_460,w_1270/v1481519518/photo-1470309864661-68328b2cd0a5_wt4h42.jpg)'}}></div>
           <div className="image-slideshow clearfix" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_460,w_1270/v1481519525/photo-1470305585628-a7d2cb18efa2_kc0akf.jpg)'}}></div>
           <div className="image-slideshow clearfix" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_460,w_1270/v1481519515/photo-1422919869950-5fdedb27cde8_gvqs9l.jpg)'}}></div>
         </Slider>
+        <div className="site-infobox">
+          <div className="site-info">
+            <h1>Find local events</h1>
+            <h2>Support your neighborhood garage sale or fundraiser</h2>
+          </div>
+        </div>
         <h3>Browse by Top Categories</h3>
         <div className="category-browse">
           <div className="row1">
@@ -40,27 +45,28 @@ class Home extends React.Component{
               name="4" className="category-mini"
               style={{backgroundImage: 'url( http://res.cloudinary.com/psia12345/image/upload/c_scale,w_700/v1478499010/photo-1445205170230-053b83016050_ujlcre.jpg)'}} value="clothing" onClick={this.handleClick}>
               <h4>Clothing</h4>
+              <p>Basic to clothings for special occassions</p>
             </Link>
-            <Link to='/api/categories/6/toys' name="6" className="category-long" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/v1478501661/No-Stuffed-Animals-for-Christmas_iklo1n.jpg)'}}>
+            <Link to='/api/categories/6/toys' name="6" className="category-long" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_250,w_700/v1478502925/No-Stuffed-Animals-for-Christmas_haswfc.jpg)'}}>
               <h4>Toys</h4>
             </Link>
           </div>
           <div className="row2">
-            <Link to='/api/categories/5/food' name='5' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_300/v1478502926/Lemonade-Stand-Birthday-Party-via-Karas-Party-Ideas-KarasPartyIdeas.com31_junxai.jpg)'}}>
+            <Link to='/api/categories/5/food' name='5' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_250,w_350/v1478500853/cookies733_kmh6pt.jpg)'}}>
               <h4>Food</h4>
             </Link>
-            <Link to='/api/categories/1/books' name='1' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/v1478499007/photo-1463320726281-696a485928c7_vdpime.jpg)'}}>
+            <Link to='/api/categories/1/books' name='1' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_250,w_350/v1478499007/photo-1463320726281-696a485928c7_vdpime.jpg)'}}>
               <h4>Books</h4>
             </Link>
-            <Link to='/api/categories/7/music' name='7' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/v1478499006/photo-1460058418905-d61a1b4a55fe_rpfqmf.jpg)'}}>
+            <Link to='/api/categories/7/music' name='7' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_250,w_350/v1478502931/slide_359089_3998500_free_qrrrlq.jpg)'}}>
               <h4>Music</h4>
             </Link>
           </div>
           <div className="row3">
-            <Link to='/api/categories/8/jewelry&amp;accessories' name='8' className="category-long" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/v1478688077/KMA_2526_n9khen.jpg)'}}>
+            <Link to='/api/categories/8/jewelry&amp;accessories' name='8' className="category-long" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_250,w_700/v1478688077/KMA_2526_n9khen.jpg)'}}>
               <h4>Jewlery & Accessories</h4>
             </Link>
-            <Link to='/api/categories/9/dishware' name='9' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/v1478687992/plates-dishware_q8dk68.jpg)'}}>
+            <Link to='/api/categories/9/dishware' name='9' className="category-mini" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_250,w_350/v1478687992/plates-dishware_q8dk68.jpg)'}}>
               <h4>Dishware</h4>
             </Link>
           </div>
@@ -85,4 +91,15 @@ export default withRouter(Home);
 //   <div className="post-card-footer">
 //
 //   </div>
+// </div>
+
+
+// <div className="event-cards">
+//   <h2>Popular Events</h2>
+//     <div className="event-lists">
+//       <ul>
+//         {this.props.currentUser.host_events.map( (event, index) =>
+//           (<li key={index}><Link to={`events/${event.id}`}><EventIndexItem event={event}/></Link></li>))}
+//       </ul>
+//     </div>
 // </div>
