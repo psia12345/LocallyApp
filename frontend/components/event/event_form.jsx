@@ -41,7 +41,7 @@ class EventForm extends React.Component{
       if(this.props.formType === 'new_event'){
         this.props.createEvent(event);
       } else {
-        this.props.updateEvent(event);
+        this.props.updateEvent(event);b
       }
       this.navigateToCreatedEvent();
     }

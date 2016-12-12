@@ -48,20 +48,32 @@ class Header extends React.Component {
     const currentUser = this.props.currentUser;
     if (currentUser !== null){
       return(
-        <div className="right-nav">
-          <Link id="user" to={`/users/${currentUser.id}`}>{currentUser.email}</Link>
-          <Link id="logout"
-            onClick={this.handleLogout}>Logout</Link>
+        <div className="login-signup">
+          <div className="right-nav">
+            <Link id="user" to={`/users/${currentUser.id}`}>{currentUser.email}</Link>
+          </div>
+          <div className="right-nav">
+            <Link id="logout"
+              onClick={this.handleLogout}>Logout</Link>
+          </div>
         </div>
       )
     } else {
         return (
-          <div className="right-nav">
-            <Link id="sign-up"
-              onClick={this.handleClick.bind(this, "Sign Up")}>SIGN UP</Link>
-            <Link id="login"
-              onClick={this.handleClick.bind(this, "Login") }>LOG IN</Link>
-            <Link id="guest" onClick={this.handleGuest.bind(this)}>GUEST </Link>
+          <div className="login-signup">
+            <div className="right-nav">
+              <Link id="sign-up"
+                onClick={this.handleClick.bind(this, "Sign Up")}>SIGN UP</Link>
+            </div>
+            <div className="right-nav">
+              <Link id="login"
+                onClick={this.handleClick.bind(this, "Login") }>LOG IN
+              </Link>
+            </div>
+            <div className="right-nav">
+              <Link id="guest" onClick={this.handleGuest.bind(this)}>GUEST
+              </Link>
+            </div>
             <Modal
               isOpen={this.state.modalOpen}
               onRequestClose={this.onModalClose}
@@ -96,7 +108,7 @@ class Header extends React.Component {
           </div>
           {this.checkLoggedInUser()}
           <div className="right-nav">
-            <Link to="/new_event" onClick={this.checkforUser}>CREATE EVENT</Link>
+            <Link id="create_event" to="/new_event" onClick={this.checkforUser}>CREATE EVENT</Link>
           </div>
         </div>
       </nav>

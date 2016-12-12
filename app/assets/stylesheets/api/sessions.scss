@@ -1,38 +1,61 @@
-// Place all the styles related to the api/Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// splash page navigation bar stylesheet
+// @font-face {
+//   font-family: "My Custom Font";
+//   src: url(https://github.com/kuali/www-theme-kuali/blob/master/fonts/BentonSans/benton-sans-regular/benton-sans-regular.ttf) format("truetype");
+// }
 .navbar {
-  background-color: #c7bebe;
-  border-bottom: 1px solid #dddddd;
-  height: auto;
+  background-color: white;
+  height: 60px;
   font-size: 20px;
-  display:flex;
+  display: flex;
   width: 100%;
+  border-bottom: 1px solid #D2D6DF;
   .logo{
-    border-right: 1px solid #dddddd;
-    a{
+    display: block;
+    float: left;
+    margin: 0px 20px;
+    width: 110px;
+    height: 60px;
+    border-right: 1px solid #EFF2F5;
+    a, a:visited{
       text-decoration: none;
-      color: white;
-      padding: 10px;
+      color: #f6682F;
       display: block;
+      line-height: 60px;
+      font-family: 'Reem Kufi', sans-serif;
+
     }
   }
+
   .right{
     display:flex;
     justify-content: flex-end;
     flex-grow: 1;
-    .right-nav{
+    .login-signup{
       display: flex;
-      border-left: 1px solid #dddddd;
+      justify-content: flex-end;
       cursor: pointer;
-      a{
-        display: block;
-        text-decoration: none;
-        padding: 10px;
-        color: white;
-      } #login, #logout, #guest {
-        border-left: 1px solid #dddddd;
+    }
+    .right-nav{
+      a, a:visited{
+        font-weight: 400;
+        line-height: 19px;
+        padding: 22px 20px 19px 20px;
+        display: flex;
+        text-transform: uppercase;
+        border-left: 1px solid #EFF2F5;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        color: #45494E;
       }
+      #create_event{
+        color: #0278b8;
+      }
+    }
+    .right-nav:hover{
+      background-color: #EFF2F5;
     }
   }
 }
@@ -41,7 +64,7 @@ input.login-input {
     color: blue;
     width: 90%;
     display: block;
-    padding: 10px;
+    // padding: 10px;
     border: 1px solid #999;
     height: 10px;
     margin: 3px auto;
@@ -72,7 +95,7 @@ input.button-guest {
   color: #fff;
   background-color: gray;
   font-family: Tahoma;
-  padding: 8px 20px;
+  // padding: 8px 20px;
   border: 1px solid darkgray;
   border-radius: 5px;
   font-size: 15px;
@@ -85,7 +108,7 @@ input.button-submit {
   background-color: gray;
   font-family: Tahoma;
   border-radius: 10px;
-  padding: 8px 20px;
+  // padding: 8px 20px;
   border: 1px solid darkgray;
   border-radius: 5px;
   font-size: 15px;
