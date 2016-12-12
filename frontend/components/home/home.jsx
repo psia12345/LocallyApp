@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import Slider from 'react-slick';
-
+import EventIndexItem from '../event/event_index_item';
 
 const CATEGORY = [ 'book', 'furniture', 'clothing', 'food', 'toys', 'music', 'accessories&jewlery', 'dishware', 'arts&crafts', 'other']
 
@@ -24,6 +24,19 @@ class Home extends React.Component{
     this.props.router.push(`api/categories/${id}/${CATEGORY[id]}`)
   }
 
+  displayEventCards(){
+    if (typeof this.props.events!== 'undefined'){
+      let events = this.props.events.slice(0,15);
+      return (
+        <ul>
+          {events.map( (event, index) => (
+            <li key={index}><Link to={`events/${event.id}`}><EventIndexItem event={event}/></Link></li>
+          ))}
+        </ul>
+      )
+    }
+  }
+
   render(){
     return (
       <div className="splash-page-main-content">
@@ -37,6 +50,10 @@ class Home extends React.Component{
             <h1>Find local events</h1>
             <h2>Support your neighborhood garage sale or fundraiser</h2>
           </div>
+        </div>
+        <div className="eventCard-events">
+          <h3>Popular Events</h3>
+            {this.displayEventCards()}
         </div>
         <h3>Browse by Top Categories</h3>
         <div className="category-browse">
@@ -77,29 +94,3 @@ class Home extends React.Component{
 }
 
 export default withRouter(Home);
-
-
-
-// <div className="cell">
-//   <div className="post-card-header">
-//     <p></p>
-//   </div>
-//   <div className="post-card-body">
-//
-//
-//   </div>
-//   <div className="post-card-footer">
-//
-//   </div>
-// </div>
-
-
-// <div className="event-cards">
-//   <h2>Popular Events</h2>
-//     <div className="event-lists">
-//       <ul>
-//         {this.props.currentUser.host_events.map( (event, index) =>
-//           (<li key={index}><Link to={`events/${event.id}`}><EventIndexItem event={event}/></Link></li>))}
-//       </ul>
-//     </div>
-// </div>

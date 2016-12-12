@@ -91,7 +91,7 @@ class User extends React.Component{
           <li className={this.state.manageClick}><Link id="edit-event" name="Manage Events"
             onClick={this.handleClick}>Manage Event</Link></li>
         </ul>
-        <div className='user-specific-events'>
+        <div className='eventCard-events'>
           { this.renderDisplayInfo() }
         </div>
         <button onClick={this.redirectToEvents} className="all-events">Discover More Events</button>
