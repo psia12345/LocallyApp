@@ -8,7 +8,7 @@ module.exports = {
     backgroundColor : 'rgba(255, 255, 255, 0.75)'
   },
   content : {
-    width                      : '180px',
+    maxWidth                   : '330px',
     border                     : '1px solid #ccc',
     background                 : '#fff',
     overflow                   : 'auto',
@@ -16,10 +16,13 @@ module.exports = {
     borderRadius               : '4px',
     outline                    : 'none',
     padding                    : '20px',
-    height                     : '150px',
     alignItem                  : 'center',
     justifyContent             : 'center',
-    margin                     : 'auto'
+    margin                     : 'auto',
+    marginTop                  : '18px',
+    marginBottom               : '64px',
+    minHeight                  : '290px',
+    maxHeight                  : 'auto',
+    textAlign                  : 'left'
   }
-
 }
