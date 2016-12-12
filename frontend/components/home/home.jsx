@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
+import Slider from 'react-slick';
+
 
 const CATEGORY = [ 'book', 'furniture', 'clothing', 'food', 'toys', 'music', 'accessories&jewlery', 'dishware', 'arts&crafts', 'other']
 
@@ -7,6 +9,14 @@ class Home extends React.Component{
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.settings = {
+      dots: true,
+      autoplay: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
   }
 
   handleClick(e){
@@ -14,10 +24,15 @@ class Home extends React.Component{
     const id = e.currentTarget.name;
     this.props.router.push(`api/categories/${id}/${CATEGORY[id]}`)
   }
-
+  
   render(){
     return (
       <div>
+        <Slider {...this.settings}>
+          <div className="image-slideshow clearfix" style={{backgroundImage:  'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_460,w_1270/v1481519518/photo-1470309864661-68328b2cd0a5_wt4h42.jpg)'}}></div>
+          <div className="image-slideshow clearfix" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_460,w_1270/v1481519525/photo-1470305585628-a7d2cb18efa2_kc0akf.jpg)'}}></div>
+          <div className="image-slideshow clearfix" style={{backgroundImage: 'url(http://res.cloudinary.com/psia12345/image/upload/c_scale,h_460,w_1270/v1481519515/photo-1422919869950-5fdedb27cde8_gvqs9l.jpg)'}}></div>
+        </Slider>
         <h3>Browse by Top Categories</h3>
         <div className="category-browse">
           <div className="row1">
