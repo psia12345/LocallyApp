@@ -4,35 +4,78 @@
 .main-content{
   display:flex;
   flex-wrap: wrap;
-  width: 80%;
-  margin: 10px auto;
+  // width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  justify-content: center;
+  .sidebar{
+    width: 21%;
+    h3{
+      margin-top: 40px;
+      padding-top: 5px;
+      padding-left: 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 400;
+      text-align: left;
+    }ul{
+      margin-top: 0;
+    }
+    li{
+      list-style: none;
+      padding: 5px 0 5px 0;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 400;
+      box-sizing: border-box;
+      overflow: hidden;
+      color: #0278b8;
+      vertical-align: top;
+    }
+  }.selected{
+    color: #282C35;
+    font-weight: 600;
+  }
 }
+
+//
+// hover effect
+// transform: translateZ(0);
+// transition: box-shadow .2s cubic-bezier(0,.2,.4,1);
+// background-color: #fff;
+// box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+// display: block;
 .event-list-section {
-  width: 70%;
+  width: 75%;
   min-width: 500px;
-  margin-left: 30px;
-  margin-right: 20px;
+  // margin-left: 30px;
+  // margin-right: 20px;
 }
 .description{
   display: block;
   h2{
-    margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 35px;
+    line-height: 50px;
+    font-weight: 400;
+    color: #282c35;
   }
 }
 .event-listing{
   a{
     text-decoration: none;
-
   }
-}
-.single-event{
-  display: flex;
-  background-color: white;
-  // margin-bottom: 20px;
-  img {
-    height: 100px;
-    display: block;
+  .single-event{
+    display: flex;
+    background-color: white;
+    margin-top: 10px;
+    font-weight: 200;
+    padding: 0 20px;
+    border-bottom: 1px solid #eff2f5;
+    // margin-bottom: 20px;
+    img {
+      height: 100px;
+      display: block;
+    }
   }
 }
 .event-info{
@@ -49,10 +92,10 @@
   }
 }
 .sidebar{
-  width: 130px;
-  height: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
+  // width: 130px;
+  // height: 100%;
+  // margin-left: 20px;
+  // margin-right: 20px;
   img{
     width: 100px;
     height: 20px;

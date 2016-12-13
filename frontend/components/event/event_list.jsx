@@ -5,8 +5,22 @@ import {Link} from 'react-router';
 const EventList = (props) => (
   <div>
     <div className="extra clearfix"></div>
-
     <div className="main-content">
+      <div className="sidebar">
+        <h3>Category</h3>
+        <ul>
+          <li>Book</li>
+          <li>Furniture</li>
+          <li>Clothing</li>
+          <li>Food</li>
+          <li>Toy</li>
+          <li>Music</li>
+          <li>Jewlery & Accessories</li>
+          <li>Dishware</li>
+          <li>Art & Craft</li>
+          <li>Others</li>
+        </ul>
+      </div>
       <section className="event-list-section">
         <div className="description clearfix">
           <h2>Displaying All Events For You</h2>
