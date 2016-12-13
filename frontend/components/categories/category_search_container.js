@@ -5,7 +5,7 @@ const mapStateToProps = (state, ownProps) => {
   const name = ownProps.params.name;
   return({
     events: state.events,
-    catgory: name
+    category: name
   })
 }
 

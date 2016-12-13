@@ -20,10 +20,13 @@
       text-align: left;
     }ul{
       margin-top: 0;
+      .clicked{
+        background-color: #eee;
+      }
     }
     li{
       list-style: none;
-      padding: 5px 0 5px 0;
+      padding: 5px 0 5px 5px;
       font-size: 15px;
       line-height: 22px;
       font-weight: 400;
@@ -31,10 +34,10 @@
       overflow: hidden;
       color: #0278b8;
       vertical-align: top;
+      a, a:visited{
+        color: #0278b8;
+      }
     }
-  }.selected{
-    color: #282C35;
-    font-weight: 600;
   }
 }
 
@@ -53,11 +56,15 @@
 }
 .description{
   display: block;
+  .emphasis{
+    color: #0278b8;
+  }
   h2{
     font-size: 35px;
     line-height: 50px;
     font-weight: 400;
     color: #282c35;
+    margin-top: 40px;
   }
 }
 .event-listing{
@@ -89,6 +96,7 @@
     margin-top: 10px;
     margin-left: 10px;
     padding: 10px;
+    font-weight: 500;
   }
 }
 .sidebar{

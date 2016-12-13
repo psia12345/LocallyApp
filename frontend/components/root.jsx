@@ -9,7 +9,6 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 // react components
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
-import EventListContainer from './event/event_list_container';
 import EventFormContainer from './event/event_form_container';
 import EventDetailContainer from './event_detail/event_detail_container';
 import HomeContainer from './home/home_container';
@@ -69,7 +68,7 @@ const Root = ({store}) => {
                  onEnter={_redirectIfLoggedIn}/>
           <Route path="/signup" component={SessionFormContainer}
                  onEnter={_redirectIfLoggedIn}/>
-          <Route path="/events" component={EventListContainer}
+               <Route path="/events" component={CategoryContainer}
                  onEnter={fetchAllEvents}/>
           <Route path="/events/:id" component={EventDetailContainer}/>
           <Route path="/events/:id/register" component={EventRegistrationFormContainer} onEnter={fetchEvent}/>
