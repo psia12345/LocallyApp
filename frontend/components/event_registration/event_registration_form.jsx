@@ -22,7 +22,6 @@ class EventRegistrationForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
     if (this.props.currentUser !== null &&
       !this.props.event.attendee_ids.includes(this.props.currentUser.id)
     ){

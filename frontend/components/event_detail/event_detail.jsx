@@ -159,11 +159,11 @@ class EventDetail extends React.Component {
 
     }
   }
-  componentWillMount(){
-    this.checkForAttendingUser();
-    this.checkForInterestedUser();
-  }
-  componentWillUpdate(){
+  // componentWillMount(){
+  //   this.checkForAttendingUser();
+  //   this.checkForInterestedUser();
+  // }
+  ShouldComponentUpdate(){
     this.checkForAttendingUser();
     this.checkForInterestedUser();
   }
