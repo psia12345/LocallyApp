@@ -3,7 +3,7 @@ import {Link, withRouter} from 'react-router';
 import Slider from 'react-slick';
 import EventIndexItem from '../event/event_index_item';
 
-const CATEGORY = [ 'books', 'furniture', 'clothing', 'food', 'toys', 'music', 'jewlery&accessories', 'dishware', 'art&craft', 'others']
+const CATEGORY = [ 'books', 'furniture', 'clothing', 'food', 'toys', 'music', 'jewlery&accessories', 'dishware', 'art&craft', 'other']
 
 class Home extends React.Component{
   constructor(props){

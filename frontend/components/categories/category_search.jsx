@@ -24,7 +24,7 @@ const CategorySearch = (props) => {
           <li className={category === "jewlery&accessories" ? "clicked" : ""}><Link to='/api/categories/7/jewlery&amp;accessories' name="7">Jewlery & Accessories</Link></li>
           <li className={category === "dishware" ? "clicked" : ""}><Link to='/api/categories/8/dishware' name="8">Dishware</Link></li>
           <li className={category === "art&craft" ? "clicked" : ""}><Link to='/api/categories/9/art&amp;craft' name="9">Art & Craft</Link></li>
-          <li className={category === "others" ? "clicked" : ""}><Link to='/api/categories/10/others' name="10">Others</Link></li>
+          <li className={category === "other" ? "clicked" : ""}><Link to='/api/categories/10/other' name="10">Others</Link></li>
         </ul>
       </div>
       <section className="event-list-section">
