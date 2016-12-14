@@ -8,8 +8,7 @@ class EventDetail extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      modalOpen: false,
-      signIn: ""
+      modalOpen: false
     };
     this.navigateToEventListing = this.navigateToEventListing.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -22,13 +21,14 @@ class EventDetail extends React.Component {
   }
 
   onModalClose(){
-    this.props.clearError();
+    // this.props.clearError();
     this.setState({modalOpen: false});
   }
 
   showUpdateDelete(){
     const eventId = this.props.params.id;
     if (this.props.currentUser !== null && this.props.currentUser.id === this.props.event.host_id) {
+      // if user is logged in and user is the owner of the event
       return(
         <div className="event-control">
           <button><Link to={`events/${eventId}/update`}>Update</Link></button>
@@ -50,57 +50,29 @@ class EventDetail extends React.Component {
 
   handleClick(e){
     e.preventDefault();
-    if (e.currentTarget.value === "Attending"){
-      this.props.router.push(`/events/${this.props.event.id}/register`)
-    } else {
-      if (this.props.currentUser !== null &&
-        !this.props.event.interested_ids.includes(this.props.currentUser.id)
-      ){
-        this.props.addInterested({
-          event_id: this.props.event.id,
-          user_id: this.props.currentUser.id
-        })
-      } else {
-        this.setState({
-          modalOpen: false
-        })
-      }
-    }
-  }
-
-  checkForAttendingUser(){
-    let attendee_ids;
-    if (this.props.currentUser !== null){
-      if (typeof this.props.event.attendees !== 'undefined'){
-        attendee_ids = this.props.event.attendees.map((attendee) => attendee.id)
-      }
-      if (typeof attendee_ids !== 'undefined' && attendee_ids.includes(this.props.currentUser.id)){
-        return (true)
-      }
-    }else return false
-  }
-
-  checkForInterestedUser(){
-    let interested_ids;
-    if (this.props.currentUser !== null){
-      if (typeof this.props.event.interested !== 'undefined'){
-        interested_ids = this.props.event.interested.map((interested_user) => interested_user.id)
-      }
-      if (typeof interested_ids !== 'undefined' && interested_ids.includes(this.props.currentUser.id)){
-        return (true)
-      }
-    }else {return (false)}
-  }
-
-  handleInterestedClick(){
-    e.preventDefault();
     if (this.props.currentUser === null){
       this.setState({
         modalOpen: true
       })
+    } else if ( !this.props.event.interested_ids.includes(this.props.currentUser.id) && e.target.value === "Interested"
+    ){
+      this.props.addInterested({
+        event_id: this.props.event.id,
+        user_id: this.props.currentUser.id
+      })
+    } else {
+      this.props.router.push(`/events/${this.props.event.id}/register`)
     }
-    this.checkForAttendingUser();
-    this.props.router.push(`/events/${this.props.event.id}/register`)
+  }
+
+  checkForAttendingUser(){
+    let attendee_ids = this.props.event.attendee_ids;
+    return this.props.currentUser !== null && typeof attendee_ids !== 'undefined' &&  attendee_ids.includes(this.props.currentUser.id)
+  }
+
+  checkForInterestedUser(){
+    let interested_ids = this.props.event.interested_ids;
+    return this.props.currentUser !== null && typeof interested_ids !== 'undefined' &&  interested_ids.includes(this.props.currentUser.id)
   }
 
   handleCancel(e){
@@ -109,23 +81,6 @@ class EventDetail extends React.Component {
       this.props.removeAttendee(this.props.event.id);
     } else {
       this.props.removeInterested(this.props.event.id)
-    }
-  }
-
-  displayInterestButton(){
-    if (!this.checkForInterestedUser()){
-      <div className="event-buttons">
-        <button className="interested" onClick={this.handleClick}
-          value="Interested">
-          <div className="bookmark"></div>Interested</button>
-      <Modal
-        isOpen={this.state.modalOpen}
-        onRequestClose={this.onModalClose}
-        style={ModalStyle}>
-        <SessionFormContainer close={this.onModalClose} action={this.state.signIn} loginlink={<Link id="login"
-          onClick={this.handleClick.bind(this, "Login") }>LOG IN</Link>}/>
-      </Modal>
-    </div>
     }
   }
 
@@ -160,17 +115,16 @@ class EventDetail extends React.Component {
           value="Interested"><div className="bookmark"></div>Interested</button>
         <button onClick={this.handleClick}
           value="Attending">Attending</button>
+        <Modal
+          isOpen={this.state.modalOpen}
+          onRequestClose={this.onModalClose}
+          style={ModalStyle}>
+          <SessionFormContainer close={this.onModalClose} action={this.state.signIn} loginlink={<Link id="login"
+            onClick={this.handleClick.bind(this, "Login") }>LOG IN</Link>}/>
+        </Modal>
       </div>)
 
     }
-  }
-  componentWillMount(){
-    this.checkForAttendingUser();
-    this.checkForInterestedUser();
-  }
-  ShouldComponentUpdate(){
-    this.checkForAttendingUser();
-    this.checkForInterestedUser();
   }
 
   render(){
@@ -186,8 +140,6 @@ class EventDetail extends React.Component {
             <p className="date">{event.start_date}</p>
             <h2>{event.title}</h2>
             <p>by {event.email}</p>
-            <div className="testing Modal">{this.displayInterestButton()}</div>
-
             {this.displaybuttons()}
           </div>
         </div>
@@ -208,7 +160,5 @@ class EventDetail extends React.Component {
       </section>
     )
   }
-
-
 }
 export default withRouter(EventDetail);

@@ -2,7 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import ModalStyle from './modal_style';
 import SessionFormContainer from '../session_form/session_form_container';
-import {Link} from 'react-router'
+import {Link} from 'react-router';
+// import LoginModal from './modal_logic';
 
 class Header extends React.Component {
   constructor(props){
@@ -83,12 +84,11 @@ class Header extends React.Component {
             </Modal>
           </div>
         )
+      }
     }
-  }
 
   checkforUser(){
-    if (this.props.currentUser){
-    } else{
+    if (this.props.currentUser === null){
       this.setState({
         modalOpen: true,
         signIn: "Login"
