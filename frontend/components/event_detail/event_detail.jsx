@@ -6,9 +6,10 @@ import SessionFormContainer from '../session_form/session_form_container';
 
 class EventDetail extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      signIn: ""
     };
     this.navigateToEventListing = this.navigateToEventListing.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -16,13 +17,13 @@ class EventDetail extends React.Component {
     this.onModalClose = this.onModalClose.bind(this);
   }
   componentDidMount(){
-    const eventId = this.props.params.id
+    const eventId = this.props.params.id;
     this.props.getEvent(eventId);
   }
 
   onModalClose(){
     this.props.clearError();
-    this.setState({modalOpen: false})
+    this.setState({modalOpen: false});
   }
 
   showUpdateDelete(){
@@ -59,6 +60,10 @@ class EventDetail extends React.Component {
           event_id: this.props.event.id,
           user_id: this.props.currentUser.id
         })
+      } else {
+        this.setState({
+          modalOpen: false
+        })
       }
     }
   }
@@ -72,7 +77,7 @@ class EventDetail extends React.Component {
       if (typeof attendee_ids !== 'undefined' && attendee_ids.includes(this.props.currentUser.id)){
         return (true)
       }
-    }
+    }else return false
   }
 
   checkForInterestedUser(){
@@ -159,10 +164,10 @@ class EventDetail extends React.Component {
 
     }
   }
-  // componentWillMount(){
-  //   this.checkForAttendingUser();
-  //   this.checkForInterestedUser();
-  // }
+  componentWillMount(){
+    this.checkForAttendingUser();
+    this.checkForInterestedUser();
+  }
   ShouldComponentUpdate(){
     this.checkForAttendingUser();
     this.checkForInterestedUser();

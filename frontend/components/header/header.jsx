@@ -25,7 +25,7 @@ class Header extends React.Component {
     this.setState({
       modalOpen: true,
       signIn: string
-    })
+    });
   }
 
   handleGuest(e){
