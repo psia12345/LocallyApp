@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import Datetime from 'react-datetime';
-import dateFormat from 'dateformat'
+import dateFormat from 'dateformat';
+
 
 class EventForm extends React.Component{
   constructor(props){
@@ -140,7 +141,7 @@ class EventForm extends React.Component{
                   closeOnSelect={true} strictParsing={false}
                   onChange={(newDate) => {
                     return (this.setState({
-                    start_time: newDate._d.toLocaleTimeString()
+                    start_time: newDate._d.toLocaleTimeString(locale, {month: 'short'})
                   }))}
                 }/>
               </div>

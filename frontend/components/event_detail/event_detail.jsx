@@ -126,6 +126,12 @@ class EventDetail extends React.Component {
 
     }
   }
+  translateMonth(date){
+    if ( date != ''){
+      let month = date.split(' ')[1];
+      return month.substring(0, 3);
+    }
+  }
 
   render(){
     const event = this.props.event;
@@ -134,28 +140,38 @@ class EventDetail extends React.Component {
     return(
       <section className="event-details">
         { this.checkForAttendingUser() ? (<h3>You are going to this event! <Link to={`users/${currentUser.id}`}>View your Upcoming Events.</Link></h3>) : (<div></div>)}
-        <div className="event-header">
+          <div className='background-banner'>
             <img src={event.image_url} />
-          <div className="right-element">
-            <p className="date">{event.start_date}</p>
-            <h2>{event.title}</h2>
-            <p>by {event.email}</p>
-            {this.displaybuttons()}
           </div>
-        </div>
-        <div className="main-content">
-          <div className="event-main">
-            <p className="section-header">DESCRIPTION</p>
-            <pre>{event.description}</pre>
-            <p className="section-header">CATEGORIES</p>
+          <div className='single-event-show'>
+          <div className="event-header">
+            <div className='image-container'>
+              <img src={event.image_url} />
+            </div>
+            <div className="right-element">
+              <p className="month date">{this.translateMonth(event.start_date)}</p>
+              <p className="date">{parseInt(event.start_date.split(" ")[2])}</p>
+              <h2>{event.title}</h2>
+              <p>by {event.email}</p>
+            </div>
           </div>
-          <div className="side-content">
-            <p className="section-header">DATE AND TIME</p>
-            <p>{event.start_date} {event.start_time} - </p>
-            <br />
-            <p>{event.end_date} {event.end_time}</p>
-            {this.showUpdateDelete()}
+          {this.displaybuttons()}
+          <div className="main-content">
+            <div className="event-main">
+              <p className="section-header">DESCRIPTION</p>
+              <pre>{event.description}</pre>
+              <p className="section-header">CATEGORIES</p>
+            </div>
+            <div className="side-content">
+              <p className="section-header">DATE AND TIME</p>
+              <p>{event.start_date} {event.start_time} - </p>
+              <br />
+              <p>{event.end_date} {event.end_time}</p>
+              {this.showUpdateDelete()}
+            </div>
           </div>
+
+
         </div>
       </section>
     )
