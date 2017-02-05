@@ -10,6 +10,20 @@ class Api::EventsController < ApplicationController
 
   def index
     @events = Event.all
+    # # params = { category: '1',
+    # #   city: 'London',
+    # #   country: 'GB',
+    # #   status: 'upcoming',
+    # #   format: 'json',
+    # #   page: '50'}
+    # meetup_api = MeetupApi.new
+    # # @events = meetup_api.open_events(params)
+    # # meetup_api = MeetupApi.new
+    # # debugger
+    # # @events = meetup_api.categories({})
+    # params = { status: 'upcoming', format: 'json', page: '10', zip: '94539'}
+    # @events = meetup_api.open_events(params)
+    # debugger
   end
 
   def create

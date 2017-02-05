@@ -117,18 +117,21 @@ class EventForm extends React.Component{
   render(){
     return(
       <div className="making-event">
-        {this.formHeader()}
+        <div className="event-form-header">
+          {this.formHeader()}
+          <button className="button">Make Event Live</button>
+        </div>
         <form onSubmit={this.handleSubmit} className="event-form">
-          <h2>1. Event Details</h2>
+          <h2><span className="icon-box">1</span>Event Details</h2>
           <label>EVENT TITLE</label>
           <input type="text" placeholder="Give it a short distict name"
             value={this.state.title}
             onChange={this.update("title")}
-            className="input-title"/>
+            className="input-title input"/>
           <div className="time">
             <div className="start-time">
               <label>STARTS</label>
-                <div className="start-date-timepicker">
+                <div className="start-date-timepicker input">
                   <Datetime value={this.state.start_date} timeFormat={false}
                     inputProps={{readOnly:true, placeholder: "Start Date"}}
                     closeOnSelect={true}
