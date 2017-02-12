@@ -29,7 +29,8 @@ class LoginModal extends React.Component {
       <Modal
       isOpen={this.state.modalOpen}
       onRequestClose={this.onModalClose}
-      style={ModalStyle}>
+      style={ModalStyle}
+      shouldCloseOnOverlayClick={true}>
       <SessionFormContainer close={this.onModalClose} action={this.state.signIn} loginlink={<Link id="login"
       onClick={this.handleClick.bind(this, "Login") }>LOG IN</Link>}/>
       </Modal>
